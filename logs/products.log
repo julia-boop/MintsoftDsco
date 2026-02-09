@@ -1,0 +1,419 @@
+2025-12-19 13:05:33,348 | INFO | product | ===== DSCO PRODUCT TEST START =====
+2025-12-19 13:07:49,001 | INFO | product | ===== DSCO PRODUCT TEST START =====
+2025-12-19 13:13:53,929 | INFO | product | ===== DSCO PRODUCT TEST START =====
+2025-12-19 13:15:20,683 | INFO | product | ===== DSCO PRODUCT TEST START =====
+2025-12-19 13:15:30,319 | INFO | product | ===== DSCO PRODUCT TEST START =====
+2025-12-19 14:39:20,182 | INFO | product | ===== DSCO PRODUCT TEST START =====
+2025-12-19 14:41:53,721 | INFO | product | ===== DSCO PRODUCT TEST START =====
+2025-12-19 14:42:47,821 | INFO | product | ===== DSCO PRODUCT TEST START =====
+2025-12-19 14:49:56,764 | INFO | product | ===== DSCO PRODUCT TEST START =====
+2025-12-19 14:49:58,736 | INFO | product | Products fetched: 0
+2025-12-19 14:49:58,736 | INFO | product | ===== DSCO PRODUCT TEST END =====
+2025-12-19 14:51:33,450 | INFO | product | ===== DSCO PRODUCT TEST START =====
+2025-12-19 14:51:35,186 | INFO | product | Products fetched: 0
+2025-12-19 14:51:35,186 | INFO | product | ===== DSCO PRODUCT TEST END =====
+2025-12-19 18:00:28,601 | INFO | product | ===== DSCO ORDER TEST START =====
+2025-12-19 18:00:31,744 | INFO | product | Order fetched successfully for PO Number: 600000499859
+2025-12-19 18:00:31,744 | INFO | product | {
+  "billTo": {},
+  "buyer": null,
+  "cancelAfterDate": "2025-11-01T06:59:59+00:00",
+  "cancelRequested": false,
+  "cancelRequestedCode": null,
+  "channel": "RACK",
+  "consumerOrderNumber": "1005140165",
+  "crossDockFlag": false,
+  "crossDockLocation": null,
+  "currencyCode": "USD",
+  "customer": null,
+  "deliveryMethod": null,
+  "dscoShipCarrier": "UPS",
+  "dscoShipMethod": "Ground",
+  "dscoShippingServiceLevelCode": "UPCG",
+  "dscoWarehouseCode": "5411",
+  "dscoWarehouseDscoId": "w68fa497a9342d603914157",
+  "giftFlag": false,
+  "giftWrapFlag": false,
+  "invoiceTo": null,
+  "orderType": "dropship",
+  "poNumber": "600000499859",
+  "requestedShipCarrier": "Generic",
+  "requestedShipMethod": "Ground",
+  "requestedShippingServiceLevelCode": "SI",
+  "requestedShippingServiceLevelCodeUnmapped": "SI",
+  "retailerCreateDate": "2025-10-29T04:43:21+00:00",
+  "shipByDate": "2025-11-01T06:59:59+00:00",
+  "shipCarrier": "UPS",
+  "shipMethod": "Ground",
+  "shipWarehouseCode": "5411",
+  "shipWarehouseDscoId": "w68fa497a9342d603914157",
+  "shipping": {
+    "address1": "3531 Inverrary Dr",
+    "address2": "H-209",
+    "address": [
+      "3531 Inverrary Dr",
+      "H-209"
+    ],
+    "city": "Lauderhill",
+    "country": "US",
+    "email": "econcessionsupport@nordstrom.com",
+    "firstName": "Sheryl",
+    "lastName": "Cheatom",
+    "name": "Sheryl Cheatom",
+    "phone": "9546848472",
+    "postal": "33319",
+    "region": "FL",
+    "state": "FL"
+  },
+  "signatureRequiredFlag": false,
+  "testFlag": false,
+  "dscoCancelLateDate": "2025-11-01T06:59:59+00:00",
+  "dscoCreateDate": "2025-10-29T06:00:54+00:00",
+  "expectedDeliveryDate": "2025-11-08T07:59:59+00:00",
+  "lineItems": [
+    {
+      "rejectedQuantity": 0,
+      "readyForPickup": false,
+      "activity": [
+        {
+          "quantity": 1,
+          "action": "add",
+          "uuid": "2fa8091f67a54ef981ff3889a0c04207",
+          "activityDate": "2025-10-29T06:00:54+00:00",
+          "updateDate": "2025-10-29T06:00:54+00:00"
+        },
+        {
+          "reason": "Tracking # 1Z0E21230395051199 added",
+          "quantity": 1,
+          "action": "ship",
+          "uuid": "89a194c8bc5c4dc8b6cb66afc92c37c5",
+          "activityDate": "2025-10-29T20:24:54+00:00",
+          "updateDate": "2025-10-29T20:24:54+00:00"
+        }
+      ],
+      "acceptedQuantity": 1,
+      "title": "Wonderland Skirt",
+      "ean": "9360263211522",
+      "expectedCost": 16,
+      "lineNumber": 1,
+      "msrp": 36.97,
+      "cancelRequested": false,
+      "productGroup": "BT24528-1-BLKNAT-S",
+      "sku": "BT24528-1-BLKNAT-S",
+      "statusReason": "Tracking # 1Z0E21230395051199 added",
+      "quantity": 1,
+      "expectedCostAdjustmentAllowed": false,
+      "giftFlag": false,
+      "acceptedReason": "Tracking # 1Z0E21230395051199 added",
+      "cancelledQuantity": 0,
+      "bogoFlag": false,
+      "status": "accepted",
+      "dscoItemId": "1298680851"
+    }
+  ],
+  "dscoLastUpdate": "2025-10-29T20:26:12+00:00",
+  "dscoLifecycle": "completed",
+  "dscoRetailerId": "1000006153",
+  "dscoShipLateDate": "2025-11-01T06:59:59+00:00",
+  "shippingServiceLevelCode": "UPCG",
+  "packages": [
+    {
+      "warehouseCode": "5411",
+      "ssccBarcode": null,
+      "trackingNumber": "1Z0E21230395051199",
+      "untracked": false,
+      "carrierManifestId": "UPS",
+      "warehouseDscoId": "w68fa497a9342d603914157",
+      "returnedFlag": false,
+      "shippingServiceLevelCode": "UPCG",
+      "shipDate": "2025-10-29T20:24:39+00:00",
+      "packageShipFrom": {
+        "country": "US",
+        "address": [
+          "1613 Hutton Dr"
+        ],
+        "city": "Carrollton",
+        "address1": "1613 Hutton Dr",
+        "name": "5411",
+        "postal": "75006",
+        "region": "TX",
+        "firstName": "5411"
+      },
+      "dscoPackageId": 2017750405,
+      "shipMethod": "Ground",
+      "items": [
+        {
+          "ean": "9360263211522",
+          "packageSpanFlag": false,
+          "quantity": 1,
+          "lineNumber": 1,
+          "originalOrderQuantity": 1,
+          "sku": "BT24528-1-BLKNAT-S",
+          "dscoItemId": "1298680851"
+        }
+      ],
+      "shipWeightUnits": "LB",
+      "shipCarrier": "UPS",
+      "packageShipTo": {
+        "country": "US",
+        "address": [
+          "3531 Inverrary Dr",
+          "H-209"
+        ],
+        "address2": "H-209",
+        "city": "Lauderhill",
+        "phone": "9546848472",
+        "address1": "3531 Inverrary Dr",
+        "name": "Sheryl Cheatom",
+        "lastName": "Cheatom",
+        "postal": "33319",
+        "region": "FL",
+        "firstName": "Sheryl",
+        "email": "econcessionsupport@nordstrom.com"
+      },
+      "tracking_url": "wwwapps.ups.com/tracking/tracking.cgi?tracknum=1Z0E21230395051199"
+    }
+  ],
+  "dscoStatus": "shipped",
+  "dscoOrderId": "1017786578",
+  "dscoSupplierId": "1000064967",
+  "dscoSupplierName": "THE HOLIDAY COLLECTIVE LLC",
+  "dscoTradingPartnerId": null,
+  "dscoTradingPartnerName": null
+}
+2025-12-19 18:00:31,745 | INFO | product | ===== DSCO ORDER TEST END =====
+2025-12-19 18:08:54,892 | INFO | product | ===== DSCO ORDER TEST START =====
+2025-12-19 18:08:54,893 | INFO | product | Fetching orders between 2025-12-15T21:08:54.893480+00:00 and 2025-12-19T21:08:49.893480+00:00
+2025-12-19 18:09:45,815 | INFO | product | ===== DSCO ORDER TEST START =====
+2025-12-19 18:09:45,816 | INFO | product | Fetching orders between 2025-12-15T21:09:45.816102+00:00 and 2025-12-19T21:09:40.816102+00:00
+2025-12-19 18:10:26,385 | INFO | product | ===== DSCO ORDER TEST START =====
+2025-12-19 18:10:26,385 | INFO | product | Fetching orders between 2025-12-15T21:10:26.385546+00:00 and 2025-12-19T21:10:21.385546+00:00
+2025-12-19 18:10:56,909 | INFO | product | ===== DSCO ORDER TEST START =====
+2025-12-19 18:10:56,910 | INFO | product | Fetching orders between 2025-12-15T21:10:56.910044+00:00 and 2025-12-19T21:10:51.910044+00:00
+2025-12-19 18:11:32,257 | INFO | product | ===== DSCO ORDER TEST START =====
+2025-12-19 18:11:32,257 | INFO | product | Fetching orders between 2025-12-15T21:11:32.257617+00:00 and 2025-12-19T21:11:27.257617+00:00
+2026-01-02 13:04:37,706 | INFO | product | ===== DSCO ORDER TEST START =====
+2026-01-02 13:04:39,410 | INFO | product | ===== DSCO ORDER TEST START =====
+2026-01-02 13:04:40,957 | INFO | product | Order fetched successfully for PO Number: 888296162
+2026-01-02 13:04:40,958 | INFO | product | {
+  "billTo": {
+    "address1": "1127 Avon circle W",
+    "address": [
+      "1127 Avon circle W"
+    ],
+    "city": "ROCHESTER HILLS",
+    "country": "US",
+    "email": "GINNIE1213@YAHOO.COM",
+    "firstName": "FAYE",
+    "lastName": "ZUHAIRY",
+    "name": "FAYE ZUHAIRY",
+    "phone": "2488729127",
+    "postal": "48309",
+    "region": "MI"
+  },
+  "buyer": null,
+  "cancelRequested": false,
+  "cancelRequestedCode": null,
+  "channel": "01",
+  "consumerOrderDate": "2025-12-28T05:35:52+00:00",
+  "consumerOrderNumber": "AP43372448",
+  "crossDockFlag": false,
+  "crossDockLocation": null,
+  "currencyCode": "USD",
+  "customer": null,
+  "deliveryMethod": null,
+  "expediteFlag": false,
+  "giftFlag": false,
+  "giftWrapFlag": false,
+  "invoiceTo": null,
+  "orderType": "dropship",
+  "poNumber": "888296162",
+  "requestedShipCarrier": "UPS",
+  "requestedShipMethod": "Ground",
+  "requestedShippingServiceLevelCode": "UPCG",
+  "requestedShippingServiceLevelCodeUnmapped": "02",
+  "retailerCreateDate": "2025-12-28T01:22:16+00:00",
+  "shipByDate": "2025-12-31T06:16:24+00:00",
+  "shipCarrier": "UPS",
+  "shipMethod": "Ground",
+  "shipping": {
+    "address1": "1127 Avon Cir W",
+    "address": [
+      "1127 Avon Cir W"
+    ],
+    "city": "ROCHESTER HILLS",
+    "country": "US",
+    "firstName": "FAYE",
+    "lastName": "ZUHAIRY",
+    "name": "FAYE ZUHAIRY",
+    "postal": "48309",
+    "region": "MI",
+    "state": "MI"
+  },
+  "signatureRequiredFlag": false,
+  "testFlag": false,
+  "dscoCreateDate": "2025-12-28T06:27:00+00:00",
+  "lineItems": [
+    {
+      "requestedShipDate": "2025-12-31T06:16:24+00:00",
+      "rejectedQuantity": 0,
+      "readyForPickup": false,
+      "activity": [
+        {
+          "quantity": 1,
+          "action": "add",
+          "uuid": "d52684e0c3dc4c28a96cd8aafa7eb83f",
+          "activityDate": "2025-12-28T06:27:00+00:00",
+          "updateDate": "2025-12-28T06:27:00+00:00"
+        },
+        {
+          "reason": "Tracking # 9405511206241855401407 added",
+          "quantity": 1,
+          "action": "ship",
+          "uuid": "188d26b8f0a8465394da64d80c5e3ca9",
+          "activityDate": "2025-12-29T18:58:22+00:00",
+          "updateDate": "2025-12-29T18:58:22+00:00"
+        }
+      ],
+      "acceptedQuantity": 1,
+      "title": "TT Studios Alex Mini Dress Medium Denim L",
+      "shipByDate": "2025-12-31T06:16:24+00:00",
+      "expectedCost": 96,
+      "lineNumber": 1,
+      "msrp": 240,
+      "cancelRequested": false,
+      "productGroup": "ALEXDRESS",
+      "sku": "609475972913",
+      "statusReason": "Tracking # 9405511206241855401407 added",
+      "quantity": 1,
+      "expectedCostAdjustmentAllowed": false,
+      "retailerItemIds": [
+        "Node 98025",
+        "Transfer_Indicator 0001"
+      ],
+      "giftFlag": false,
+      "upc": "609475972913",
+      "estimatedShipDate": "2025-12-31T06:16:24+00:00",
+      "consumerPrice": 240,
+      "acceptedReason": "Tracking # 9405511206241855401407 added",
+      "partnerSku": "107186736",
+      "cancelledQuantity": 0,
+      "bogoFlag": false,
+      "status": "accepted",
+      "dscoItemId": "1306521418"
+    }
+  ],
+  "dscoLastUpdate": "2025-12-29T18:58:22+00:00",
+  "dscoLifecycle": "completed",
+  "dscoRetailerId": "1000050020",
+  "dscoShipLateDate": "2025-12-31T04:59:59+00:00",
+  "shippingServiceLevelCode": "UPCG",
+  "packages": [
+    {
+      "warehouseCode": "88",
+      "vendorInvoiceNumber": "888296162",
+      "ssccBarcode": null,
+      "trackingNumber": "9405511206241855401407",
+      "untracked": false,
+      "carrierManifestId": "UPS",
+      "warehouseDscoId": "w68f163ea334c1423240934",
+      "returnedFlag": false,
+      "shippingServiceLevelCode": "UPCG",
+      "shipDate": "2025-12-29T18:58:05+00:00",
+      "packageShipFrom": {
+        "country": "US",
+        "address": [
+          "1703 South La Cadena Drive"
+        ],
+        "city": "Colton",
+        "address1": "1703 South La Cadena Drive",
+        "name": "88 International Inc.",
+        "postal": "92324",
+        "region": "CA",
+        "firstName": "88 International Inc."
+      },
+      "dscoPackageId": 2063910104,
+      "shipMethod": "Ground",
+      "shipWeight": 2,
+      "items": [
+        {
+          "packageSpanFlag": false,
+          "quantity": 1,
+          "retailerItemIds": [
+            "Node 98025",
+            "Transfer_Indicator 0001"
+          ],
+          "lineNumber": 1,
+          "partnerSku": "107186736",
+          "upc": "609475972913",
+          "originalOrderQuantity": 1,
+          "sku": "609475972913",
+          "dscoItemId": "1306521418"
+        }
+      ],
+      "shipWeightUnits": "LB",
+      "shipCarrier": "UPS",
+      "packageShipTo": {
+        "country": "US",
+        "address": [
+          "1127 Avon Cir W"
+        ],
+        "city": "ROCHESTER HILLS",
+        "address1": "1127 Avon Cir W",
+        "name": "FAYE ZUHAIRY",
+        "lastName": "ZUHAIRY",
+        "postal": "48309",
+        "region": "MI",
+        "firstName": "FAYE"
+      },
+      "tracking_url": "wwwapps.ups.com/tracking/tracking.cgi?tracknum=9405511206241855401407"
+    }
+  ],
+  "dscoStatus": "shipped",
+  "dscoOrderId": "1062081451",
+  "dscoSupplierId": "1000064905",
+  "dscoSupplierName": "TT Studio",
+  "dscoTradingPartnerId": null,
+  "dscoTradingPartnerName": null
+}
+2026-01-02 13:04:40,958 | INFO | product | ===== DSCO ORDER TEST END =====
+2026-01-02 15:04:28,755 | INFO | product | ===== DSCO ORDER TEST START =====
+2026-01-02 15:04:28,755 | ERROR | product | Error fetching orders: DscoOrderClient.get_orders_page() got an unexpected keyword argument 'updated_since'
+2026-01-02 15:04:28,755 | INFO | product | ===== DSCO ORDER TEST END =====
+2026-01-02 15:06:30,108 | INFO | product | ===== DSCO ORDER TEST START =====
+2026-01-02 15:06:31,876 | ERROR | product | Error fetching orders: 403 Client Error: Forbidden for url: https://api.dsco.io/api/v3/order/page
+2026-01-02 15:06:31,878 | INFO | product | ===== DSCO ORDER TEST END =====
+2026-01-02 15:40:22,418 | INFO | product | ===== DSCO ORDER TEST START =====
+2026-01-02 15:40:24,198 | ERROR | product | Error fetching orders: 403 Client Error: Forbidden for url: https://api.dsco.io/api/v3/order/page
+2026-01-02 15:40:24,200 | INFO | product | ===== DSCO ORDER TEST END =====
+2026-01-02 15:40:58,720 | INFO | product | ===== DSCO ORDER TEST START =====
+2026-01-02 15:40:58,720 | ERROR | product | Error fetching orders: DscoOrderClient.get_all_orders() got an unexpected keyword argument 'orders_created_since'. Did you mean 'orders_updated_since'?
+2026-01-02 15:40:58,720 | INFO | product | ===== DSCO ORDER TEST END =====
+2026-01-02 15:42:25,023 | INFO | product | ===== DSCO ORDER TEST START =====
+2026-01-02 15:42:25,023 | ERROR | product | Error fetching orders: DscoOrderClient.get_all_orders() got an unexpected keyword argument 'orders_created_since'. Did you mean 'orders_updated_since'?
+2026-01-02 15:42:25,023 | INFO | product | ===== DSCO ORDER TEST END =====
+2026-01-02 15:46:40,248 | INFO | product | ===== DSCO ORDER TEST START =====
+2026-01-02 15:46:41,835 | ERROR | product | Error fetching orders: 'Response' object has no attribute 'prepare'
+2026-01-02 15:46:41,837 | INFO | product | ===== DSCO ORDER TEST END =====
+2026-01-02 15:47:46,953 | INFO | product | ===== DSCO ORDER TEST START =====
+2026-01-02 15:47:48,488 | ERROR | product | Error fetching orders: 'Response' object has no attribute 'prepare'
+2026-01-02 15:47:48,490 | INFO | product | ===== DSCO ORDER TEST END =====
+2026-01-02 15:48:03,402 | INFO | product | ===== DSCO ORDER TEST START =====
+2026-01-02 15:48:04,918 | ERROR | product | Error fetching orders: 403 Client Error: Forbidden for url: https://api.dsco.io/api/v3/order/page
+2026-01-02 15:48:04,921 | INFO | product | ===== DSCO ORDER TEST END =====
+2026-01-02 17:59:17,545 | INFO | product | ===== DSCO ORDER TEST START =====
+2026-01-02 17:59:19,609 | ERROR | product | Error fetching orders: 403 Client Error: Forbidden for url: https://api.dsco.io/api/v3/order/page?ordersCreatedSince=2024-01-01T00%3A00%3A00%2B00%3A00&until=2026-01-02T18%3A58%3A05%2B00%3A00
+2026-01-02 17:59:19,612 | INFO | product | ===== DSCO ORDER TEST END =====
+2026-01-02 18:02:54,452 | INFO | product | ===== DSCO ORDER TEST START =====
+2026-01-02 18:02:55,893 | ERROR | product | Error fetching orders: 403 Client Error: Forbidden for url: https://api.dsco.io/api/v3/order/page?ordersCreatedSince=2024-01-01T00:00:00%2B00:00&until=2026-01-02T18:58:05%2B00:00
+2026-01-02 18:02:55,895 | INFO | product | ===== DSCO ORDER TEST END =====
+2026-01-05 11:38:18,583 | INFO | product | ===== DSCO ORDER TEST START =====
+2026-01-05 11:38:20,625 | INFO | product | ===== DSCO ORDER TEST END =====
+2026-01-05 11:39:01,434 | INFO | product | ===== DSCO ORDER TEST START =====
+2026-01-05 11:39:03,507 | INFO | product | ===== DSCO ORDER TEST END =====
+2026-01-05 11:50:34,700 | INFO | product | ===== DSCO ORDER TEST START =====
+2026-01-05 11:50:36,989 | INFO | product | ===== DSCO ORDER TEST END =====
+2026-01-05 11:50:53,012 | INFO | product | ===== DSCO ORDER TEST START =====
+2026-01-05 11:50:55,093 | INFO | product | ===== DSCO ORDER TEST END =====
+2026-01-05 11:52:36,354 | INFO | product | ===== DSCO ORDER TEST START =====
+2026-01-05 11:52:39,256 | INFO | product | ===== DSCO ORDER TEST END =====

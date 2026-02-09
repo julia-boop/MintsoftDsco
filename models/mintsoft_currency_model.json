@@ -1,0 +1,202 @@
+[
+    {
+        "Name": "United Kingdom Pound",
+        "Code": "GBP",
+        "Symbol": "£",
+        "ID": 1,
+        "LastUpdated": "2016-05-11T22:17:25.16",
+        "LastUpdatedByUser": "SYSTEM"
+    },
+    {
+        "Name": "United States Dollar",
+        "Code": "USD",
+        "Symbol": "$",
+        "ID": 2,
+        "LastUpdated": "2016-05-11T22:18:39.113",
+        "LastUpdatedByUser": "SYSTEM"
+    },
+    {
+        "Name": "Euro Member Countries",
+        "Code": "EUR",
+        "Symbol": "€",
+        "ID": 3,
+        "LastUpdated": "2016-05-11T22:20:33.853",
+        "LastUpdatedByUser": "SYSTEM"
+    },
+    {
+        "Name": "Australian Dollar",
+        "Code": "AUD",
+        "Symbol": "$",
+        "ID": 4,
+        "LastUpdated": "2017-07-14T09:18:01.8",
+        "LastUpdatedByUser": "SYSTEM"
+    },
+    {
+        "Name": "Mexican Peso",
+        "Code": "MXN",
+        "Symbol": "$",
+        "ID": 5,
+        "LastUpdated": "2018-06-04T16:03:39.407942",
+        "LastUpdatedByUser": "jean.super"
+    },
+    {
+        "Name": "Norwegian krone",
+        "Code": "NOK",
+        "Symbol": "kr",
+        "ID": 6,
+        "LastUpdated": "2018-06-04T16:04:26.9978956",
+        "LastUpdatedByUser": "jean.super"
+    },
+    {
+        "Name": "Russian Ruble",
+        "Code": "RUB",
+        "Symbol": "₽",
+        "ID": 7,
+        "LastUpdated": "2018-06-04T16:05:04.7306177",
+        "LastUpdatedByUser": "jean.super"
+    },
+    {
+        "Name": "Candian Dollar",
+        "Code": "CAD",
+        "Symbol": "$",
+        "ID": 8,
+        "LastUpdated": "2018-06-04T16:06:10.1430169",
+        "LastUpdatedByUser": "jean.super"
+    },
+    {
+        "Name": "Japanese Yen",
+        "Code": "JPY",
+        "Symbol": "¥",
+        "ID": 9,
+        "LastUpdated": "2018-06-05T10:02:52.7808596",
+        "LastUpdatedByUser": "martin.super"
+    },
+    {
+        "Name": "Swiss Franc",
+        "Code": "CHF",
+        "Symbol": "Fr.",
+        "ID": 10,
+        "LastUpdated": "2018-06-05T10:04:42.6199255",
+        "LastUpdatedByUser": "martin.super"
+    },
+    {
+        "Name": "Chinese Yuan",
+        "Code": "CNY",
+        "Symbol": "¥",
+        "ID": 11,
+        "LastUpdated": "2018-06-05T10:08:16.2750842",
+        "LastUpdatedByUser": "martin.super"
+    },
+    {
+        "Name": "Turkish Lira",
+        "Code": "TRY",
+        "Symbol": "₺",
+        "ID": 12,
+        "LastUpdated": "2018-06-05T10:23:31.7752886",
+        "LastUpdatedByUser": "martin.super"
+    },
+    {
+        "Name": "Brazilian Real",
+        "Code": "BRL",
+        "Symbol": "R$",
+        "ID": 13,
+        "LastUpdated": "2018-06-05T10:24:37.5452657",
+        "LastUpdatedByUser": "martin.super"
+    },
+    {
+        "Name": "Danish Krone",
+        "Code": "DKK",
+        "Symbol": "Kr.",
+        "ID": 14,
+        "LastUpdated": "2018-06-05T10:24:58.942546",
+        "LastUpdatedByUser": "martin.super"
+    },
+    {
+        "Name": "Hong Kong Dollar",
+        "Code": "HKD",
+        "Symbol": "$",
+        "ID": 15,
+        "LastUpdated": "2018-06-05T10:25:24.8750275",
+        "LastUpdatedByUser": "martin.super"
+    },
+    {
+        "Name": "Indian Rupee",
+        "Code": "INR",
+        "Symbol": "₹",
+        "ID": 16,
+        "LastUpdated": "2018-06-05T10:25:48.5099125",
+        "LastUpdatedByUser": "martin.super"
+    },
+    {
+        "Name": "Malaysian Ringgit",
+        "Code": "MYR",
+        "Symbol": "RM",
+        "ID": 17,
+        "LastUpdated": "2018-06-05T10:25:59.7669904",
+        "LastUpdatedByUser": "martin.super"
+    },
+    {
+        "Name": "New Zealand Dollar",
+        "Code": "NZD",
+        "Symbol": "$",
+        "ID": 18,
+        "LastUpdated": "2018-06-05T10:26:16.4947949",
+        "LastUpdatedByUser": "martin.super"
+    },
+    {
+        "Name": "Polish Zloty",
+        "Code": "PLN",
+        "Symbol": "zł",
+        "ID": 19,
+        "LastUpdated": "2018-06-05T10:26:46.2440074",
+        "LastUpdatedByUser": "martin.super"
+    },
+    {
+        "Name": "Singapore Dollar",
+        "Code": "SGD",
+        "Symbol": "S$",
+        "ID": 20,
+        "LastUpdated": "2018-06-05T10:28:10.8653837",
+        "LastUpdatedByUser": "martin.super"
+    },
+    {
+        "Name": "South African Rand",
+        "Code": "ZAR",
+        "Symbol": "R",
+        "ID": 21,
+        "LastUpdated": "2018-06-05T10:28:27.525745",
+        "LastUpdatedByUser": "martin.super"
+    },
+    {
+        "Name": "South Korean Won",
+        "Code": "KRW",
+        "Symbol": "₩",
+        "ID": 22,
+        "LastUpdated": "2018-06-05T10:28:57.7758936",
+        "LastUpdatedByUser": "martin.super"
+    },
+    {
+        "Name": "Swedish Krona",
+        "Code": "SEK",
+        "Symbol": "kr",
+        "ID": 23,
+        "LastUpdated": "2018-06-05T10:29:23.3263112",
+        "LastUpdatedByUser": "martin.super"
+    },
+    {
+        "Name": "Taiwan Dollar",
+        "Code": "TWD",
+        "Symbol": "$",
+        "ID": 24,
+        "LastUpdated": "2018-06-05T10:29:53.6144145",
+        "LastUpdatedByUser": "martin.super"
+    },
+    {
+        "Name": "Thai Baht",
+        "Code": "THB",
+        "Symbol": "฿",
+        "ID": 25,
+        "LastUpdated": "2018-06-05T10:30:18.1949708",
+        "LastUpdatedByUser": "martin.super"
+    }
+]

@@ -1,0 +1,60 @@
+2026-01-13 10:37:57,760 | INFO | order_main | ===== ORDER SYNC STARTED =====
+2026-01-13 10:38:00,362 | ERROR | order_main | ===== ORDER SYNC FAILED =====
+Traceback (most recent call last):
+  File "/Users/julia/Documents/Python/DscoMintsoft/mains/order_main.py", line 21, in main
+    service.sync_all_orders(status="released")
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/julia/Documents/Python/DscoMintsoft/services/order_service.py", line 26, in sync_all_orders
+    mintsoft_orders = MintsoftOrderClient()._get_orders()
+  File "/Users/julia/Documents/Python/DscoMintsoft/clients/mintsoft_order_client.py", line 86, in _get_orders
+    r = requests.get(
+        url,
+    ...<2 lines>...
+        timeout=30,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/requests/sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/requests/sessions.py", line 484, in prepare_request
+    p.prepare(
+    ~~~~~~~~~^
+        method=request.method.upper(),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<10 lines>...
+        hooks=merge_hooks(request.hooks, self.hooks),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/requests/models.py", line 368, in prepare
+    self.prepare_headers(headers)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/requests/models.py", line 488, in prepare_headers
+    for header in headers.items():
+                  ^^^^^^^^^^^^^
+AttributeError: 'function' object has no attribute 'items'
+2026-01-13 10:40:51,391 | INFO | order_main | ===== ORDER SYNC STARTED =====
+2026-01-13 10:40:55,004 | INFO | order_main | ===== ORDER SYNC FINISHED SUCCESSFULLY =====
+2026-01-13 11:02:37,010 | INFO | order_main | ===== ORDER SYNC STARTED =====
+2026-01-13 11:02:53,608 | INFO | order_main | ===== ORDER SYNC FINISHED SUCCESSFULLY =====
+2026-01-14 11:07:16,317 | INFO | order_main | ===== ORDER SYNC STARTED =====
+2026-01-14 11:07:17,642 | ERROR | order_main | ===== ORDER SYNC FAILED =====
+Traceback (most recent call last):
+  File "/Users/julia/Documents/Python/DscoMintsoft/mains/order_main.py", line 20, in main
+    service = OrderSyncService()
+  File "/Users/julia/Documents/Python/DscoMintsoft/services/order_service.py", line 23, in __init__
+    self.last_order_sync = states.get("last_order_sync", None)
+                           ^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'get'
+2026-01-14 11:08:11,580 | INFO | order_main | ===== ORDER SYNC STARTED =====
+2026-01-14 11:08:12,920 | ERROR | order_main | ===== ORDER SYNC FAILED =====
+Traceback (most recent call last):
+  File "/Users/julia/Documents/Python/DscoMintsoft/mains/order_main.py", line 21, in main
+    service.sync_all_orders(status="released")
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+TypeError: OrderSyncService.sync_all_orders() got an unexpected keyword argument 'status'
+2026-01-14 11:11:20,299 | INFO | order_main | ===== ORDER SYNC STARTED =====
+2026-01-14 11:11:26,016 | INFO | order_main | ===== ORDER SYNC FINISHED SUCCESSFULLY =====

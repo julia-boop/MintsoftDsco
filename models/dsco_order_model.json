@@ -1,0 +1,609 @@
+{
+    "orders": [
+        {
+            "billTo": {
+                "address1": "9 Steeple Chase Circle",
+                "address": [
+                    "9 Steeple Chase Circle"
+                ],
+                "city": "WESTFORD",
+                "country": "US",
+                "email": "MARGO.RIZZI@GMAIL.COM",
+                "firstName": "MARGARET",
+                "lastName": "RIZZI",
+                "name": "MARGARET RIZZI",
+                "phone": "4123350686",
+                "postal": "01886",
+                "region": "MA"
+            },
+            "buyer": null,
+            "cancelRequested": false,
+            "cancelRequestedCode": null,
+            "channel": "01",
+            "consumerOrderDate": "2025-12-29T02:48:38+00:00",
+            "consumerOrderNumber": "AP43390504",
+            "crossDockFlag": false,
+            "crossDockLocation": null,
+            "currencyCode": "USD",
+            "customer": null,
+            "deliveryMethod": null,
+            "expediteFlag": false,
+            "giftFlag": false,
+            "giftWrapFlag": false,
+            "invoiceTo": null,
+            "orderType": "dropship",
+            "poNumber": "888576281",
+            "requestedShipCarrier": "UPS",
+            "requestedShipMethod": "Ground",
+            "requestedShippingServiceLevelCode": "UPCG",
+            "requestedShippingServiceLevelCodeUnmapped": "02",
+            "retailerCreateDate": "2025-12-28T22:32:19+00:00",
+            "shipByDate": "2026-01-01T03:25:01+00:00",
+            "shipCarrier": "UPS",
+            "shipMethod": "Ground",
+            "shipping": {
+                "address1": "9 Steeple Chase Cir",
+                "address": [
+                    "9 Steeple Chase Cir"
+                ],
+                "city": "WESTFORD",
+                "country": "US",
+                "firstName": "MARGO",
+                "lastName": "RYAN",
+                "name": "MARGO RYAN",
+                "postal": "01886",
+                "region": "MA",
+                "state": "MA"
+            },
+            "signatureRequiredFlag": false,
+            "testFlag": false,
+            "dscoCreateDate": "2025-12-29T03:37:01+00:00",
+            "lineItems": [
+                {
+                    "requestedShipDate": "2026-01-01T03:25:01+00:00",
+                    "rejectedQuantity": 0,
+                    "readyForPickup": false,
+                    "activity": [
+                        {
+                            "quantity": 1,
+                            "action": "add",
+                            "uuid": "f977715a1a8c400689f41dde92f7a9ea",
+                            "activityDate": "2025-12-29T03:37:01+00:00",
+                            "updateDate": "2025-12-29T03:37:01+00:00"
+                        },
+                        {
+                            "reason": "Tracking # 9405511206241855400530 added",
+                            "quantity": 1,
+                            "action": "ship",
+                            "uuid": "8def2678841e4e3cbc18812b4e41f212",
+                            "activityDate": "2025-12-29T18:57:13+00:00",
+                            "updateDate": "2025-12-29T18:57:13+00:00"
+                        }
+                    ],
+                    "acceptedQuantity": 1,
+                    "title": "TT Studios Alex Mini Dress Medium Denim M",
+                    "shipByDate": "2026-01-01T03:25:01+00:00",
+                    "expectedCost": 96,
+                    "lineNumber": 1,
+                    "msrp": 240,
+                    "cancelRequested": false,
+                    "productGroup": "ALEXDRESS",
+                    "sku": "609475972906",
+                    "statusReason": "Tracking # 9405511206241855400530 added",
+                    "quantity": 1,
+                    "expectedCostAdjustmentAllowed": false,
+                    "retailerItemIds": [
+                        "Node 98025",
+                        "Transfer_Indicator 0001"
+                    ],
+                    "giftFlag": false,
+                    "upc": "609475972906",
+                    "estimatedShipDate": "2026-01-01T03:25:01+00:00",
+                    "consumerPrice": 240,
+                    "acceptedReason": "Tracking # 9405511206241855400530 added",
+                    "partnerSku": "107186728",
+                    "cancelledQuantity": 0,
+                    "bogoFlag": false,
+                    "status": "accepted",
+                    "dscoItemId": "1306521417"
+                },
+                {
+                    "requestedShipDate": "2026-01-01T03:25:01+00:00",
+                    "rejectedQuantity": 0,
+                    "readyForPickup": false,
+                    "activity": [
+                        {
+                            "quantity": 1,
+                            "action": "add",
+                            "uuid": "b40cfbf078b4472bae1d2ac410355c3e",
+                            "activityDate": "2025-12-29T03:37:01+00:00",
+                            "updateDate": "2025-12-29T03:37:01+00:00"
+                        },
+                        {
+                            "reason": "Tracking # 9405511206241855400530 added",
+                            "quantity": 1,
+                            "action": "ship",
+                            "uuid": "faf54865aaaf47f9a4b8b27dd8f76e3e",
+                            "activityDate": "2025-12-29T18:57:13+00:00",
+                            "updateDate": "2025-12-29T18:57:13+00:00"
+                        }
+                    ],
+                    "acceptedQuantity": 1,
+                    "title": "TT Studios Alex Mini Dress Medium Denim L",
+                    "shipByDate": "2026-01-01T03:25:01+00:00",
+                    "expectedCost": 96,
+                    "lineNumber": 2,
+                    "msrp": 240,
+                    "cancelRequested": false,
+                    "productGroup": "ALEXDRESS",
+                    "sku": "609475972913",
+                    "statusReason": "Tracking # 9405511206241855400530 added",
+                    "quantity": 1,
+                    "expectedCostAdjustmentAllowed": false,
+                    "retailerItemIds": [
+                        "Node 98025",
+                        "Transfer_Indicator 0001"
+                    ],
+                    "giftFlag": false,
+                    "upc": "609475972913",
+                    "estimatedShipDate": "2026-01-01T03:25:01+00:00",
+                    "consumerPrice": 240,
+                    "acceptedReason": "Tracking # 9405511206241855400530 added",
+                    "partnerSku": "107186736",
+                    "cancelledQuantity": 0,
+                    "bogoFlag": false,
+                    "status": "accepted",
+                    "dscoItemId": "1306521418"
+                }
+            ],
+            "dscoLastUpdate": "2025-12-29T18:57:13+00:00",
+            "dscoLifecycle": "completed",
+            "dscoRetailerId": "1000050020",
+            "dscoShipLateDate": "2025-12-31T04:59:59+00:00",
+            "shippingServiceLevelCode": "UPCG",
+            "packages": [
+                {
+                    "warehouseCode": "88",
+                    "vendorInvoiceNumber": "888576281",
+                    "ssccBarcode": null,
+                    "trackingNumber": "9405511206241855400530",
+                    "untracked": false,
+                    "carrierManifestId": "USPS",
+                    "warehouseDscoId": "w68f163ea334c1423240934",
+                    "returnedFlag": false,
+                    "shippingServiceLevelCode": "USPM",
+                    "shipDate": "2025-12-29T18:56:18+00:00",
+                    "packageShipFrom": {
+                        "country": "US",
+                        "address": [
+                            "1703 South La Cadena Drive"
+                        ],
+                        "city": "Colton",
+                        "address1": "1703 South La Cadena Drive",
+                        "name": "88 International Inc.",
+                        "postal": "92324",
+                        "region": "CA",
+                        "firstName": "88 International Inc."
+                    },
+                    "dscoPackageId": 2063909072,
+                    "shipMethod": "Priority Mail",
+                    "shipWeight": 2,
+                    "items": [
+                        {
+                            "packageSpanFlag": false,
+                            "quantity": 1,
+                            "retailerItemIds": [
+                                "Node 98025",
+                                "Transfer_Indicator 0001"
+                            ],
+                            "lineNumber": 1,
+                            "partnerSku": "107186728",
+                            "upc": "609475972906",
+                            "originalOrderQuantity": 1,
+                            "sku": "609475972906",
+                            "dscoItemId": "1306521417"
+                        },
+                        {
+                            "packageSpanFlag": false,
+                            "quantity": 1,
+                            "retailerItemIds": [
+                                "Node 98025",
+                                "Transfer_Indicator 0001"
+                            ],
+                            "lineNumber": 2,
+                            "partnerSku": "107186736",
+                            "upc": "609475972913",
+                            "originalOrderQuantity": 1,
+                            "sku": "609475972913",
+                            "dscoItemId": "1306521418"
+                        }
+                    ],
+                    "shipWeightUnits": "LB",
+                    "shipCarrier": "USPS",
+                    "packageShipTo": {
+                        "country": "US",
+                        "address": [
+                            "9 Steeple Chase Cir"
+                        ],
+                        "city": "WESTFORD",
+                        "address1": "9 Steeple Chase Cir",
+                        "name": "MARGO RYAN",
+                        "lastName": "RYAN",
+                        "postal": "01886",
+                        "region": "MA",
+                        "firstName": "MARGO"
+                    },
+                    "tracking_url": "tools.usps.com/go/TrackConfirmAction_input?origTrackNum=9405511206241855400530"
+                }
+            ],
+            "dscoStatus": "shipped",
+            "dscoOrderId": "1062459350",
+            "dscoSupplierId": "1000064905",
+            "dscoSupplierName": "TT Studio",
+            "dscoTradingPartnerId": null,
+            "dscoTradingPartnerName": null
+        },
+        {
+            "billTo": {
+                "address1": "5511 Ledgestone Dr",
+                "address": [
+                    "5511 Ledgestone Dr"
+                ],
+                "city": "DALLAS",
+                "country": "US",
+                "email": "AMRITA.NANDA26@GMAIL.COM",
+                "firstName": "AMRITA",
+                "lastName": "NANDA",
+                "name": "AMRITA NANDA",
+                "phone": "3144772366",
+                "postal": "75214",
+                "region": "TX"
+            },
+            "buyer": null,
+            "cancelRequested": false,
+            "cancelRequestedCode": null,
+            "channel": "01",
+            "consumerOrderDate": "2025-12-28T14:25:44+00:00",
+            "consumerOrderNumber": "AN23851669",
+            "crossDockFlag": false,
+            "crossDockLocation": null,
+            "currencyCode": "USD",
+            "customer": null,
+            "deliveryMethod": null,
+            "expediteFlag": false,
+            "giftFlag": false,
+            "giftWrapFlag": false,
+            "invoiceTo": null,
+            "orderType": "dropship",
+            "poNumber": "888322652",
+            "requestedShipCarrier": "UPS",
+            "requestedShipMethod": "Ground",
+            "requestedShippingServiceLevelCode": "UPCG",
+            "requestedShippingServiceLevelCodeUnmapped": "02",
+            "retailerCreateDate": "2025-12-28T10:12:16+00:00",
+            "shipByDate": "2025-12-31T15:04:50+00:00",
+            "shipCarrier": "UPS",
+            "shipMethod": "Ground",
+            "shipping": {
+                "address1": "5511 Ledgestone Dr",
+                "address": [
+                    "5511 Ledgestone Dr"
+                ],
+                "city": "DALLAS",
+                "country": "US",
+                "firstName": "AMRITA",
+                "lastName": "NANDA",
+                "name": "AMRITA NANDA",
+                "postal": "75214",
+                "region": "TX",
+                "state": "TX"
+            },
+            "signatureRequiredFlag": false,
+            "testFlag": false,
+            "dscoCreateDate": "2025-12-28T15:16:56+00:00",
+            "lineItems": [
+                {
+                    "requestedShipDate": "2025-12-31T15:04:50+00:00",
+                    "rejectedQuantity": 0,
+                    "readyForPickup": false,
+                    "activity": [
+                        {
+                            "quantity": 1,
+                            "action": "add",
+                            "uuid": "b7d4e644bc5a4e939143df271e493312",
+                            "activityDate": "2025-12-28T15:16:56+00:00",
+                            "updateDate": "2025-12-28T15:16:56+00:00"
+                        },
+                        {
+                            "reason": "Tracking # 9405511206241855406242 added",
+                            "quantity": 1,
+                            "action": "ship",
+                            "uuid": "f9f18d502cc74d23bff3716db6ee9697",
+                            "activityDate": "2025-12-29T18:57:52+00:00",
+                            "updateDate": "2025-12-29T18:57:52+00:00"
+                        }
+                    ],
+                    "acceptedQuantity": 1,
+                    "title": "TT Studios Victoria Sweetheart Dress Medium Deni",
+                    "shipByDate": "2025-12-31T15:04:50+00:00",
+                    "expectedCost": 96,
+                    "lineNumber": 1,
+                    "msrp": 240,
+                    "cancelRequested": false,
+                    "productGroup": "VICTORIADRESS",
+                    "sku": "609475965618",
+                    "statusReason": "Tracking # 9405511206241855406242 added",
+                    "quantity": 1,
+                    "expectedCostAdjustmentAllowed": false,
+                    "retailerItemIds": [
+                        "Node 98025",
+                        "Transfer_Indicator 0001"
+                    ],
+                    "giftFlag": false,
+                    "upc": "609475965618",
+                    "estimatedShipDate": "2025-12-31T15:04:50+00:00",
+                    "consumerPrice": 240,
+                    "acceptedReason": "Tracking # 9405511206241855406242 added",
+                    "partnerSku": "107186637",
+                    "cancelledQuantity": 0,
+                    "bogoFlag": false,
+                    "status": "accepted",
+                    "dscoItemId": "1303220963"
+                }
+            ],
+            "dscoLastUpdate": "2025-12-29T18:57:52+00:00",
+            "dscoLifecycle": "completed",
+            "dscoRetailerId": "1000050020",
+            "dscoShipLateDate": "2025-12-31T04:59:59+00:00",
+            "shippingServiceLevelCode": "UPCG",
+            "packages": [
+                {
+                    "warehouseCode": "88",
+                    "vendorInvoiceNumber": "888322652",
+                    "ssccBarcode": null,
+                    "trackingNumber": "9405511206241855406242",
+                    "untracked": false,
+                    "carrierManifestId": "USPS",
+                    "warehouseDscoId": "w68f163ea334c1423240934",
+                    "returnedFlag": false,
+                    "shippingServiceLevelCode": "USPM",
+                    "shipDate": "2025-12-29T18:57:34+00:00",
+                    "packageShipFrom": {
+                        "country": "US",
+                        "address": [
+                            "1703 South La Cadena Drive"
+                        ],
+                        "city": "Colton",
+                        "address1": "1703 South La Cadena Drive",
+                        "name": "88 International Inc.",
+                        "postal": "92324",
+                        "region": "CA",
+                        "firstName": "88 International Inc."
+                    },
+                    "dscoPackageId": 2063909701,
+                    "shipMethod": "Priority Mail",
+                    "shipWeight": 2,
+                    "items": [
+                        {
+                            "packageSpanFlag": false,
+                            "quantity": 1,
+                            "retailerItemIds": [
+                                "Node 98025",
+                                "Transfer_Indicator 0001"
+                            ],
+                            "lineNumber": 1,
+                            "partnerSku": "107186637",
+                            "upc": "609475965618",
+                            "originalOrderQuantity": 1,
+                            "sku": "609475965618",
+                            "dscoItemId": "1303220963"
+                        }
+                    ],
+                    "shipWeightUnits": "LB",
+                    "shipCarrier": "USPS",
+                    "packageShipTo": {
+                        "country": "US",
+                        "address": [
+                            "5511 Ledgestone Dr"
+                        ],
+                        "city": "DALLAS",
+                        "address1": "5511 Ledgestone Dr",
+                        "name": "AMRITA NANDA",
+                        "lastName": "NANDA",
+                        "postal": "75214",
+                        "region": "TX",
+                        "firstName": "AMRITA"
+                    },
+                    "tracking_url": "tools.usps.com/go/TrackConfirmAction_input?origTrackNum=9405511206241855406242"
+                }
+            ],
+            "dscoStatus": "shipped",
+            "dscoOrderId": "1062149261",
+            "dscoSupplierId": "1000064905",
+            "dscoSupplierName": "TT Studio",
+            "dscoTradingPartnerId": null,
+            "dscoTradingPartnerName": null
+        },
+        {
+            "billTo": {
+                "address1": "1127 Avon circle W",
+                "address": [
+                    "1127 Avon circle W"
+                ],
+                "city": "ROCHESTER HILLS",
+                "country": "US",
+                "email": "GINNIE1213@YAHOO.COM",
+                "firstName": "FAYE",
+                "lastName": "ZUHAIRY",
+                "name": "FAYE ZUHAIRY",
+                "phone": "2488729127",
+                "postal": "48309",
+                "region": "MI"
+            },
+            "buyer": null,
+            "cancelRequested": false,
+            "cancelRequestedCode": null,
+            "channel": "01",
+            "consumerOrderDate": "2025-12-28T05:35:52+00:00",
+            "consumerOrderNumber": "AP43372448",
+            "crossDockFlag": false,
+            "crossDockLocation": null,
+            "currencyCode": "USD",
+            "customer": null,
+            "deliveryMethod": null,
+            "expediteFlag": false,
+            "giftFlag": false,
+            "giftWrapFlag": false,
+            "invoiceTo": null,
+            "orderType": "dropship",
+            "poNumber": "888296162",
+            "requestedShipCarrier": "UPS",
+            "requestedShipMethod": "Ground",
+            "requestedShippingServiceLevelCode": "UPCG",
+            "requestedShippingServiceLevelCodeUnmapped": "02",
+            "retailerCreateDate": "2025-12-28T01:22:16+00:00",
+            "shipByDate": "2025-12-31T06:16:24+00:00",
+            "shipCarrier": "UPS",
+            "shipMethod": "Ground",
+            "shipping": {
+                "address1": "1127 Avon Cir W",
+                "address": [
+                    "1127 Avon Cir W"
+                ],
+                "city": "ROCHESTER HILLS",
+                "country": "US",
+                "firstName": "FAYE",
+                "lastName": "ZUHAIRY",
+                "name": "FAYE ZUHAIRY",
+                "postal": "48309",
+                "region": "MI",
+                "state": "MI"
+            },
+            "signatureRequiredFlag": false,
+            "testFlag": false,
+            "dscoCreateDate": "2025-12-28T06:27:00+00:00",
+            "lineItems": [
+                {
+                    "requestedShipDate": "2025-12-31T06:16:24+00:00",
+                    "rejectedQuantity": 0,
+                    "readyForPickup": false,
+                    "activity": [
+                        {
+                            "quantity": 1,
+                            "action": "add",
+                            "uuid": "d52684e0c3dc4c28a96cd8aafa7eb83f",
+                            "activityDate": "2025-12-28T06:27:00+00:00",
+                            "updateDate": "2025-12-28T06:27:00+00:00"
+                        },
+                        {
+                            "reason": "Tracking # 9405511206241855401407 added",
+                            "quantity": 1,
+                            "action": "ship",
+                            "uuid": "188d26b8f0a8465394da64d80c5e3ca9",
+                            "activityDate": "2025-12-29T18:58:22+00:00",
+                            "updateDate": "2025-12-29T18:58:22+00:00"
+                        }
+                    ],
+                    "acceptedQuantity": 1,
+                    "title": "TT Studios Alex Mini Dress Medium Denim L",
+                    "shipByDate": "2025-12-31T06:16:24+00:00",
+                    "expectedCost": 96,
+                    "lineNumber": 1,
+                    "msrp": 240,
+                    "cancelRequested": false,
+                    "productGroup": "ALEXDRESS",
+                    "sku": "609475972913",
+                    "statusReason": "Tracking # 9405511206241855401407 added",
+                    "quantity": 1,
+                    "expectedCostAdjustmentAllowed": false,
+                    "retailerItemIds": [
+                        "Node 98025",
+                        "Transfer_Indicator 0001"
+                    ],
+                    "giftFlag": false,
+                    "upc": "609475972913",
+                    "estimatedShipDate": "2025-12-31T06:16:24+00:00",
+                    "consumerPrice": 240,
+                    "acceptedReason": "Tracking # 9405511206241855401407 added",
+                    "partnerSku": "107186736",
+                    "cancelledQuantity": 0,
+                    "bogoFlag": false,
+                    "status": "accepted",
+                    "dscoItemId": "1306521418"
+                }
+            ],
+            "dscoLastUpdate": "2025-12-29T18:58:22+00:00",
+            "dscoLifecycle": "completed",
+            "dscoRetailerId": "1000050020",
+            "dscoShipLateDate": "2025-12-31T04:59:59+00:00",
+            "shippingServiceLevelCode": "UPCG",
+            "packages": [
+                {
+                    "warehouseCode": "88",
+                    "vendorInvoiceNumber": "888296162",
+                    "ssccBarcode": null,
+                    "trackingNumber": "9405511206241855401407",
+                    "untracked": false,
+                    "carrierManifestId": "UPS",
+                    "warehouseDscoId": "w68f163ea334c1423240934",
+                    "returnedFlag": false,
+                    "shippingServiceLevelCode": "UPCG",
+                    "shipDate": "2025-12-29T18:58:05+00:00",
+                    "packageShipFrom": {
+                        "country": "US",
+                        "address": [
+                            "1703 South La Cadena Drive"
+                        ],
+                        "city": "Colton",
+                        "address1": "1703 South La Cadena Drive",
+                        "name": "88 International Inc.",
+                        "postal": "92324",
+                        "region": "CA",
+                        "firstName": "88 International Inc."
+                    },
+                    "dscoPackageId": 2063910104,
+                    "shipMethod": "Ground",
+                    "shipWeight": 2,
+                    "items": [
+                        {
+                            "packageSpanFlag": false,
+                            "quantity": 1,
+                            "retailerItemIds": [
+                                "Node 98025",
+                                "Transfer_Indicator 0001"
+                            ],
+                            "lineNumber": 1,
+                            "partnerSku": "107186736",
+                            "upc": "609475972913",
+                            "originalOrderQuantity": 1,
+                            "sku": "609475972913",
+                            "dscoItemId": "1306521418"
+                        }
+                    ],
+                    "shipWeightUnits": "LB",
+                    "shipCarrier": "UPS",
+                    "packageShipTo": {
+                        "country": "US",
+                        "address": [
+                            "1127 Avon Cir W"
+                        ],
+                        "city": "ROCHESTER HILLS",
+                        "address1": "1127 Avon Cir W",
+                        "name": "FAYE ZUHAIRY",
+                        "lastName": "ZUHAIRY",
+                        "postal": "48309",
+                        "region": "MI",
+                        "firstName": "FAYE"
+                    },
+                    "tracking_url": "wwwapps.ups.com/tracking/tracking.cgi?tracknum=9405511206241855401407"
+                }
+            ],
+            "dscoStatus": "shipped",
+            "dscoOrderId": "1062081451",
+            "dscoSupplierId": "1000064905",
+            "dscoSupplierName": "TT Studio",
+            "dscoTradingPartnerId": null,
+            "dscoTradingPartnerName": null
+        }
+    ]
+}
