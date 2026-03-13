@@ -1,0 +1,226 @@
+{
+    "orders": [
+        {
+            "billTo": {
+                "address1": "153 Hollyhock Ln",
+                "address": [
+                    "153 Hollyhock Ln"
+                ],
+                "city": "PONTE VEDRA BEACH",
+                "country": "US",
+                "email": "WENDY_L_GREGORY@HOTMAIL.COM",
+                "firstName": "WENDY",
+                "lastName": "GREGORY",
+                "name": "WENDY GREGORY",
+                "phone": "7734257960",
+                "postal": "32082",
+                "region": "FL"
+            },
+            "buyer": null,
+            "cancelRequested": false,
+            "cancelRequestedCode": null,
+            "channel": "01",
+            "consumerOrderDate": "2026-01-12T02:26:54+00:00",
+            "consumerOrderNumber": "AP43641969",
+            "crossDockFlag": false,
+            "crossDockLocation": null,
+            "currencyCode": "USD",
+            "customer": null,
+            "deliveryMethod": null,
+            "expediteFlag": false,
+            "giftFlag": false,
+            "giftWrapFlag": false,
+            "invoiceTo": null,
+            "marketplaceType": null,
+            "orderType": "dropship",
+            "poNumber": "891706439",
+            "requestedShipCarrier": "UPS",
+            "requestedShipMethod": "Ground",
+            "requestedShippingServiceLevelCode": "UPCG",
+            "requestedShippingServiceLevelCodeUnmapped": "02",
+            "retailerCreateDate": "2026-01-11T22:11:20+00:00",
+            "shipByDate": "2026-01-15T03:04:25+00:00",
+            "shipCarrier": "UPS",
+            "shipMethod": "Ground",
+            "shipping": {
+                "address1": "153 Hollyhock Ln",
+                "address": [
+                    "153 Hollyhock Ln"
+                ],
+                "city": "PONTE VEDRA BEACH",
+                "country": "US",
+                "firstName": "WENDY",
+                "lastName": "GREGORY",
+                "name": "WENDY GREGORY",
+                "postal": "32082",
+                "region": "FL",
+                "state": "FL"
+            },
+            "signatureRequiredFlag": false,
+            "testFlag": false,
+            "dscoCreateDate": "2026-01-12T03:11:40+00:00",
+            "lineItems": [
+                {
+                    "requestedShipDate": "2026-01-15T03:04:25+00:00",
+                    "rejectedQuantity": 0,
+                    "readyForPickup": false,
+                    "activity": [
+                        {
+                            "quantity": 1,
+                            "action": "add",
+                            "uuid": "ed3842674df242a4b52a1dd191db0381",
+                            "activityDate": "2026-01-12T03:11:40+00:00",
+                            "updateDate": "2026-01-12T03:11:40+00:00"
+                        }
+                    ],
+                    "acceptedQuantity": 0,
+                    "title": "Test Client Orden 1",
+                    "shipByDate": "2026-01-15T03:04:25+00:00",
+                    "expectedCost": 96,
+                    "lineNumber": 1,
+                    "msrp": 240,
+                    "cancelRequested": false,
+                    "productGroup": "VICTORIADRESS",
+                    "sku": "PRODUCT1",
+                    "quantity": 1,
+                    "expectedCostAdjustmentAllowed": false,
+                    "retailerItemIds": [
+                        "Node 98025",
+                        "Transfer_Indicator 0001"
+                    ],
+                    "giftFlag": false,
+                    "upc": "609475965571",
+                    "estimatedShipDate": "2026-01-15T03:04:25+00:00",
+                    "consumerPrice": 240,
+                    "partnerSku": "107186520",
+                    "cancelledQuantity": 0,
+                    "bogoFlag": false,
+                    "dscoItemId": "1303220959"
+                }
+            ],
+            "dscoLastUpdate": "2026-01-13T03:21:20+00:00",
+            "dscoLifecycle": "created",
+            "dscoRetailerId": "1000050020",
+            "dscoShipLateDate": "2026-01-14T04:59:59+00:00",
+            "shippingServiceLevelCode": "UPCG",
+            "dscoStatus": "created",
+            "dscoOrderId": "1068214867",
+            "dscoSupplierId": "1000064905",
+            "dscoSupplierName": "TEST CLIENT",
+            "dscoTradingPartnerId": null,
+            "dscoTradingPartnerName": null
+        },
+        {
+            "billTo": {
+                "address1": "2600 Holcomb Bridge Rd",
+                "address2": "Apt 1319",
+                "address": [
+                    "2600 Holcomb Bridge Rd",
+                    "Apt 1319"
+                ],
+                "city": "ALPHARETTA",
+                "country": "US",
+                "email": "LIBBYLOVEMUNRO@GMAIL.COM",
+                "firstName": "ELIZABETH",
+                "lastName": "STUMP",
+                "name": "ELIZABETH STUMP",
+                "phone": "3364033460",
+                "postal": "30022",
+                "region": "GA"
+            },
+            "buyer": null,
+            "cancelRequested": false,
+            "cancelRequestedCode": null,
+            "channel": "01",
+            "consumerOrderDate": "2026-01-11T15:23:01+00:00",
+            "consumerOrderNumber": "AP43631220",
+            "crossDockFlag": false,
+            "crossDockLocation": null,
+            "currencyCode": "USD",
+            "customer": null,
+            "deliveryMethod": null,
+            "expediteFlag": false,
+            "giftFlag": false,
+            "giftWrapFlag": false,
+            "invoiceTo": null,
+            "marketplaceType": null,
+            "orderType": "dropship",
+            "poNumber": "891589782",
+            "requestedShipCarrier": "UPS",
+            "requestedShipMethod": "Ground",
+            "requestedShippingServiceLevelCode": "UPCG",
+            "requestedShippingServiceLevelCodeUnmapped": "02",
+            "retailerCreateDate": "2026-01-11T11:31:14+00:00",
+            "shipByDate": "2026-01-14T16:24:21+00:00",
+            "shipCarrier": "UPS",
+            "shipMethod": "Ground",
+            "shipping": {
+                "address1": "2600 Holcomb Bridge Rd Apt 1319",
+                "address": [
+                    "2600 Holcomb Bridge Rd Apt 1319"
+                ],
+                "city": "ALPHARETTA",
+                "country": "US",
+                "firstName": "ELIZABETH",
+                "lastName": "STUMP",
+                "name": "ELIZABETH STUMP",
+                "postal": "30022-6734",
+                "region": "GA",
+                "state": "GA"
+            },
+            "signatureRequiredFlag": false,
+            "testFlag": false,
+            "dscoCreateDate": "2026-01-11T16:31:36+00:00",
+            "lineItems": [
+                {
+                    "requestedShipDate": "2026-01-14T16:24:21+00:00",
+                    "rejectedQuantity": 0,
+                    "readyForPickup": false,
+                    "activity": [
+                        {
+                            "quantity": 1,
+                            "action": "add",
+                            "uuid": "2921cefcf8f549239d537bd9568cb36d",
+                            "activityDate": "2026-01-11T16:31:36+00:00",
+                            "updateDate": "2026-01-11T16:31:36+00:00"
+                        }
+                    ],
+                    "acceptedQuantity": 0,
+                    "title": "Test Client Orden 2",
+                    "shipByDate": "2026-01-14T16:24:21+00:00",
+                    "expectedCost": 96,
+                    "lineNumber": 1,
+                    "msrp": 240,
+                    "cancelRequested": false,
+                    "productGroup": "ALEXDRESS",
+                    "sku": "609475972883",
+                    "quantity": 1,
+                    "expectedCostAdjustmentAllowed": false,
+                    "retailerItemIds": [
+                        "Node 98025",
+                        "Transfer_Indicator 0001"
+                    ],
+                    "giftFlag": false,
+                    "upc": "609475972883",
+                    "estimatedShipDate": "2026-01-14T16:24:21+00:00",
+                    "consumerPrice": 240,
+                    "partnerSku": "107186702",
+                    "cancelledQuantity": 0,
+                    "bogoFlag": false,
+                    "dscoItemId": "1306521415"
+                }
+            ],
+            "dscoLastUpdate": "2026-01-12T16:41:22+00:00",
+            "dscoLifecycle": "created",
+            "dscoRetailerId": "1000050020",
+            "dscoShipLateDate": "2026-01-14T04:59:59+00:00",
+            "shippingServiceLevelCode": "UPCG",
+            "dscoStatus": "created",
+            "dscoOrderId": "1067932181",
+            "dscoSupplierId": "1000064905",
+            "dscoSupplierName": "TEST CLIENT",
+            "dscoTradingPartnerId": null,
+            "dscoTradingPartnerName": null
+        }
+    ]
+}

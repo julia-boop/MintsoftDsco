@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 from urllib.parse import quote
 import time
 import json
-
+import datetime
 
 load_dotenv()
 
@@ -88,3 +88,45 @@ class DscoOrderClient:
             
         return r.json()
 
+
+
+
+
+    def formateo_ack(self, payload):
+        url = (
+            f"{self.BASE_URL}/order/acknowledge"
+              )
+         
+        ack_payload = [
+            {
+                "id": payload["ExternalOrderReference"],
+                "type": "DSCO_ORDER_ID",
+                "supplierOrderNumber": payload["OrderNumber"],
+                "poAcknowledgement": {
+                    "messageControlNumber": payload["OrderNumber"], # O un UUID único
+                    "originatingSystemTrxId": {
+                        "trxDate": datetime.datetime.utcnow().isoformat() + "Z",
+                        "text": "Mintsoft Order Created",
+                        "systemOwner": "Mintsoft"
+                    },
+                    "scheduledShipDate": payload.get("RequiredDespatchDate"),
+                    "lineItemAck": [
+                        {
+                            "poLineNumber": str(item.get("LineNumber", index + 1)),
+                            "quantityOpen": str(item["Quantity"]),
+                            "action": [
+                                {
+                                    "quantity": str(item["Quantity"]),
+                                    "accept": "true", # Confirmamos que aceptamos el item
+                                    "vendorSKU": item["SKU"]
+                                }
+                            ]
+                        } for index, item in enumerate(payload["OrderItems"])
+                    ],
+                    "ackType": "entire_po" # Indica que estamos respondiendo por toda la orden
+                }
+            }
+        ]
+        r = requests.post(url, headers=self._headers(), json=ack_payload)
+        print(r.json())
+        return #r.json()

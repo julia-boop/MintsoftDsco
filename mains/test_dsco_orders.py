@@ -12,20 +12,26 @@ from loggers.product_logger import get_product_logger
 
 def main():
     load_dotenv()
-
+    
     logger = get_product_logger()
     logger.info("===== DSCO ORDER TEST START =====")
 
     order_client = DscoOrderClient()
 
-    updated_since = "2024-01-01T00:00:00+00:00"  
+    updated_since = "2024-01-01T00:00:00+00:00"   #Fijar fecha para día de hoy
     updated_until = "2026-01-02T18:58:05+00:00"
 
     try:
         orders_page = order_client.get_orders(
             orders_created_since=updated_since,
             until=updated_until,
-        )
+        ) 
+        
+        #traer ordenes y usar flujo para cargarlas en mitsoft 
+        #cambiar nivel de stock en dsco 
+
+
+
 
     except Exception as e:
         logger.error(f"Error fetching orders: {e}")

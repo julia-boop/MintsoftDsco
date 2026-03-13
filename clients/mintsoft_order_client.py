@@ -44,18 +44,54 @@ class MintsoftOrderClient:
             "Accept": "application/json",
         }
 
-    def create_order(self, payload: Dict[str, Any]) -> Dict[str, Any]:
-        url = f"{self.BASE_URL}/api/Order"
+    def create_order(self, payload):
+        try:    
+            url = f"{self.BASE_URL}/api/Order"
+            headers = self.headers()
+            headers["Content-Type"] = "application/json"
+            print(payload, "Ok")
+            print(type(payload))
+            r = requests.put(
+                url,
+                headers=headers,
+                
+                data=json.dumps({"Order": payload,
+                                 "ClientId": payload["ClientId"],
+                                 "OrderNumber": payload["OrderNumber"],
+                                 "OrderItems": payload["OrderItems"],
+                                 "WarehouseId": payload["WarehouseId"],
+                                 "Warehouse": payload["Warehouse"],
+                                 "CurrencyId": payload["CurrencyId"],
+                                 "CourierServiceId": payload["CourierServiceId"],
+                                 "ChannelId": payload["ChannelId"],
+                                 "Currency": payload["Currency"],
+                                 "RequiredDespatchDate": payload["RequiredDespatchDate"],
+                                 "FirstName": payload["FirstName"],
+                                 "LastName": payload["LastName"],
+                                 "Country": payload["Country"],
+                                 "CountryId": payload["CountryId"],
+                                  "PostCode": payload["PostCode"],
+                                  "ConnectAction": payload["ConnectAction"],
+                                "Address1": payload["Address1"],
+                                 "Town": payload["Town"],
+                                  "Email": payload["Email"],
+                                   "Phone": payload["Phone"],
+                                     "ExternalOrderReference": payload["ExternalOrderReference"],
+                                      #"CourierService": payload["CourierService"],
+                                       "Channel": payload["Channel"],
+                                         "OrderValue": payload["OrderValue"],
+                                         "Address2": payload["Address2"],
+                                    
 
-        r = requests.put(
-            url,
-            headers=self.headers,
-            json=payload,
-            timeout=30,
-        )
-        r.raise_for_status()
 
-        return r.json() if r.text else {}
+
+                                 }),  # data= con dumps explícito, no json=
+                timeout=30,
+            )
+            print("STATUS:", r.status_code)
+            print("RESPONSE:", r.text)
+        except Exception as e:
+            print(e)
 
     def update_order_items(
         self,
@@ -194,3 +230,17 @@ class MintsoftOrderClient:
         with open('mintsoft_currency_model.json', 'w', encoding='utf-8') as f:
             json.dump(data, f, ensure_ascii=False, indent=4)
         return data
+    
+    def order_con_order_number(self, orderNumber):
+        url = f"{self.BASE_URL}/api/Order/Search"
+
+        r = requests.get(
+            url=url,
+            headers=self.headers(),
+            params= {
+                "OrderNumber": orderNumber,
+            },
+            timeout=30
+        )
+        print(r.json())
+        return r.json()
