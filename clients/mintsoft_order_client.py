@@ -69,7 +69,6 @@ class MintsoftOrderClient:
                                  "FirstName": payload["FirstName"],
                                  "LastName": payload["LastName"],
                                  "Country": payload["Country"],
-                                 "CountryId": payload["CountryId"],
                                   "PostCode": payload["PostCode"],
                                   "ConnectAction": payload["ConnectAction"],
                                 "Address1": payload["Address1"],
@@ -244,3 +243,20 @@ class MintsoftOrderClient:
         )
         print(r.json())
         return r.json()
+    
+
+
+    def search_barcode(self, barcode):
+        url = f"{self.BASE_URL}/api/Product/SearchBarcode"
+
+        r = requests.get(
+            url=url,
+            headers=self.headers(),
+            params= {
+                "Barcode": barcode,
+            },
+            timeout=30
+        )
+        print(r.json())
+        print(r.json().get("SKU"))
+        return r.json().get("SKU")

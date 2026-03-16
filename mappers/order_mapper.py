@@ -3,6 +3,7 @@ from datetime import datetime, timezone
 import os
 import json
 import traceback
+from clients.mintsoft_order_client import MintsoftOrderClient
 load_dotenv()
 
 
@@ -17,15 +18,13 @@ def map_dsco_order(dsco_order):
         ruta_model_countries = os.path.join(directorio_actual, '..','models', 'mintsoft_country_model.json')
         with open(ruta_model_countries, 'r') as file:
             countries = json.load(file)
-            name_list = []
-            country_id = None
+            #name_list = []
+            country = None
             for c in countries:
-                name_list.append(c.get("Name"))
-                name_list.append(c.get("Code"))
-                name_list.append(c.get("Code3"))
-                if dsco_order.get("shipping", {}).get("country") in name_list:
-                    country_id = c.get("ID")
-            print(country_id)
+                if c.get("Code") == dsco_order.get("shipping", {}).get("country"):
+                    country = c.get("Name")
+                    break
+            print("country")
 
         ruta_model_currency = os.path.join(directorio_actual, '..','models', 'mintsoft_currency_model.json')
         with open(ruta_model_currency, 'r') as file:
@@ -60,9 +59,11 @@ def map_dsco_order(dsco_order):
         
         order_items = []
         order_value = 0 
+        client = MintsoftOrderClient() #segmentar lógica por clie¡nte
         for li in dsco_order.get("lineItems", []):
+            sku = client.search_barcode(li.get("sku"))
             item = {
-                "SKU": li.get("sku"),
+                "SKU": sku,
                 #Chequear como traer product id o si basta con SKU
                 "Quantity": li.get("quantity"),
                 "Price": li.get("consumerPrice"),
@@ -73,6 +74,7 @@ def map_dsco_order(dsco_order):
         
         #Order a model:
         #Entender consumerOrderNumber ("return invoices tied to the consumer order number")
+        
 
         mintsoft_order = {
             "OrderItems": order_items, #UnitPrice,UnitPriceVat,Discount,OrderItemNameValues, WarehouseId hardcodeado?, RequestedSerialNo,RequestedBatchNo, RequestedBBEDate
@@ -103,13 +105,12 @@ def map_dsco_order(dsco_order):
             "Town": dsco_order.get("shipping", {}).get("city"),
             "County": dsco_order.get("shipping", {}).get("state"),
             "PostCode": dsco_order.get("shipping", {}).get("postal"),
-            "Country": dsco_order.get("shipping", {}).get("country"),
-            "CountryId": country_id, 
+            "Country": country,
             "Email": dsco_order.get("billTo", {}).get("email"),
             "Phone": dsco_order.get("billTo", {}).get("phone"),
             #Mobile
             #"CourierService": dsco_order.get("shipCarrier") + " " + dsco_order.get("shipMethod") + " - " + "Ecommerce", #Agregar ecommerce
-            "CourierServiceId": 2562,  #anthropology
+            "CourierServiceId": 2562,  #chequear cual es para holiday
             "Channel": "TEST_DSCO", #Cambiar a DSCO
             "ChannelId": 53,  #Cambiar a 50
             "Warehouse": "Warehouse", #Chequear
@@ -118,7 +119,7 @@ def map_dsco_order(dsco_order):
             "CurrencyId": currency_id,
             "RequiredDespatchDate": dsco_to_mintsoft(dsco_order.get("shipByDate")), 
             "OrderValue": order_value, 
-            "ClientId": int(os.getenv("MINTSOFT_CLIENT_ID", "0")),  #Porque esta hardcodeado 
+            "ClientId": 3,  #Porque esta hardcodeado 
             #   "Comments": "string",
             #   "DeliveryNotes": "string",
             #   "GiftMessages": "string",

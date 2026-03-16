@@ -38,18 +38,20 @@ class OrderSyncService:
         print("chequeo")
         try: 
             until = datetime.now(timezone.utc).isoformat() 
-            dsco_orders_1 = self.dsco_client.get_orders(
-                orders_created_since=self.last_order_sync,
-                until=until,
-            )
-            #print(dsco_orders_1)
+            # dsco_orders_1 = self.dsco_client.get_orders(
+            #      orders_created_since=self.last_order_sync,
+            #      until=until,
+            #  )
+            # print(dsco_orders_1)
+            
+            #  #print(dsco_orders_1)
             # with open(ruta_order, 'w', encoding='utf-8') as f:   
-            #     json.dump(dsco_orders_1, f, ensure_ascii=False, indent=2)
-                
-            print("inicio", dsco_orders_1,"fin")
+            #      json.dump(dsco_orders_1, f, ensure_ascii=False, indent=2)
+            # print("inicio", dsco_orders_1,"fin")
+            
         except Exception as e:
-            print(e)
-        #sys.exit()
+             print(e)
+            
         with open(ruta_order, 'r') as file:   
             dsco_orders = json.load(file)["orders"]
         #traer las ordenes de las cajas ahora
