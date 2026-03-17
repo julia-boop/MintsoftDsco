@@ -8,7 +8,7 @@ from flask import json
 from clients.dsco_order_client import DscoOrderClient
 from clients.mintsoft_order_client import MintsoftOrderClient
 from mappers.order_mapper import map_dsco_order
-
+from mailservice import generar_html_reporte_creacion_ordenes, enviar_reporte_email
 #map_dsco_order_update
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -34,34 +34,38 @@ class OrderSyncService:
         #mintsoft_orders = MintsoftOrderClient()._get_orders()
         #Para que trae ordenes?
         directorio_actual = os.path.dirname(os.path.abspath(__file__))
-        ruta_order = os.path.join(directorio_actual, '..', 'dsco_order_model.json')
         print("chequeo")
+        now_utc = datetime.now(timezone.utc)
+        since_utc = now_utc - timedelta(days=2)
+        since = since_utc.isoformat().replace('+00:00', 'Z')
         try: 
             until = datetime.now(timezone.utc).isoformat() 
-            # dsco_orders_1 = self.dsco_client.get_orders(
-            #      orders_created_since=self.last_order_sync,
-            #      until=until,
-            #  )
-            # print(dsco_orders_1)
+            dsco_orders_1 = self.dsco_client.get_orders(
+                 orders_created_since=since,
+                 until=until,
+             )
+            #print(dsco_orders_1)
             
-            #  #print(dsco_orders_1)
+             #print(dsco_orders_1)
             # with open(ruta_order, 'w', encoding='utf-8') as f:   
             #      json.dump(dsco_orders_1, f, ensure_ascii=False, indent=2)
-            # print("inicio", dsco_orders_1,"fin")
-            
+            print("inicio", dsco_orders_1,"fin")
         except Exception as e:
              print(e)
-            
-        with open(ruta_order, 'r') as file:   
-            dsco_orders = json.load(file)["orders"]
+
+
+        # ruta_order = os.path.join(directorio_actual, '..', 'dsco_order_model.json')
+        # with open(ruta_order, 'r') as file:   
+        #      dsco_orders = json.load(file)["orders"] #usar directamente dsco_orders_1
         #traer las ordenes de las cajas ahora
-        print("ordenes", len(dsco_orders))
+        print("ordenes", len(dsco_orders_1))
+
         #skipped = []
         updated = []
         created = []
         client = MintsoftOrderClient()
         try: 
-            for dsco_order in dsco_orders:
+            for dsco_order in dsco_orders_1["orders"]:
                 #mintsoft_order = next((order for order in mintsoft_orders if order["OrderNumber"] == dsco_order["poNumber"]), None)
                 #chequear orden mintsoft con id 
                 print(dsco_order["poNumber"])
@@ -78,14 +82,26 @@ class OrderSyncService:
             # self.logger.info(f"Orders to be updated: {len(updated)}")
             # self.logger.info(f"Orders to be skipped: {len(skipped)}")
             print("acaa")
+            ordenes_creadas = []
+            ordenes_no_creadas = []
             for order in created:
                 mapped_order = map_dsco_order(order)
                 print(mapped_order, "mapped")
                 #Hasta acá, debugear funcion
-                client.create_order(mapped_order)
-                print("OK")
-                self.dsco_client.formateo_ack(mapped_order)
+                crear_orden = client.create_order(mapped_order)
+                print(crear_orden, "orden creada")
+                print(crear_orden[0])
+                if crear_orden[0]["Success"] == True:
+                    ordenes_creadas.append(mapped_order["OrderNumber"])
+                else:
+                    ordenes_no_creadas.append(mapped_order["OrderNumber"])
+            
+            print(ordenes_creadas, ordenes_no_creadas)
+            html_message = generar_html_reporte_creacion_ordenes(ordenes_creadas, ordenes_no_creadas)
+            enviar_reporte_email(html_message, ["ngurfinkel@the5411.com"], "Órdenes TT Dsco")
+                    #self.dsco_client.formateo_ack(mapped_order)
 
+            #Avisar por mail las ordenes creadas con exito y sino el error 
 
             # for order in updated:  #Chequear diferencias para post api/Order/{id}
             #     mapped_order = map_dsco_order_update(order.get("order"))

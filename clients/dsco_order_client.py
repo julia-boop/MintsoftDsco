@@ -82,9 +82,9 @@ class DscoOrderClient:
         )
 
         r.raise_for_status()
-        data = r.json()
-        with open('dsco_order_model.json', 'w', encoding='utf-8') as f:
-            json.dump(data, f, ensure_ascii=False, indent=4)
+        # data = r.json()
+        # with open('dsco_order_model.json', 'w', encoding='utf-8') as f:
+        #     json.dump(data, f, ensure_ascii=False, indent=4)
             
         return r.json()
 

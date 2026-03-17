@@ -112,14 +112,14 @@ def map_dsco_order(dsco_order):
             #"CourierService": dsco_order.get("shipCarrier") + " " + dsco_order.get("shipMethod") + " - " + "Ecommerce", #Agregar ecommerce
             "CourierServiceId": 2562,  #chequear cual es para holiday
             "Channel": "TEST_DSCO", #Cambiar a DSCO
-            "ChannelId": 53,  #Cambiar a 50
+            "ChannelId": 50,  #Cambiar a 50
             "Warehouse": "Warehouse", #Chequear
             "WarehouseId": int(os.getenv("MINTSOFT_WAREHOUSE_ID", "0")),
             "Currency": dsco_order.get("currencyCode"),
             "CurrencyId": currency_id,
             "RequiredDespatchDate": dsco_to_mintsoft(dsco_order.get("shipByDate")), 
             "OrderValue": order_value, 
-            "ClientId": 3,  #Porque esta hardcodeado 
+            "ClientId": 7,  #Porque esta hardcodeado 
             #   "Comments": "string",
             #   "DeliveryNotes": "string",
             #   "GiftMessages": "string",

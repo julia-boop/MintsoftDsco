@@ -91,7 +91,7 @@ class MintsoftOrderClient:
             print("RESPONSE:", r.text)
         except Exception as e:
             print(e)
-
+        return r.json()
     def update_order_items(
         self,
         order_id: int,
