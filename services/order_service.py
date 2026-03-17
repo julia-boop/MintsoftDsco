@@ -8,7 +8,7 @@ from flask import json
 from clients.dsco_order_client import DscoOrderClient
 from clients.mintsoft_order_client import MintsoftOrderClient
 from mappers.order_mapper import map_dsco_order
-from mailservice import generar_html_reporte_creacion_ordenes, enviar_reporte_email
+from services.mailservice import generar_html_reporte_creacion_ordenes, enviar_reporte_email
 #map_dsco_order_update
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
