@@ -127,6 +127,6 @@ class DscoOrderClient:
                 }
             }
         ]
-       # r = requests.post(url, headers=self._headers(), json=ack_payload)
-       # print(r.json())
+        r = requests.post(url, headers=self._headers(), json=ack_payload)
+        print(r.json())
         return #r.json()
