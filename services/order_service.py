@@ -44,8 +44,10 @@ class OrderSyncService:
                  orders_created_since=since,
                  until=until,
              )
-            #print(dsco_orders_1)
-            
+            # ruta_order = os.path.join(directorio_actual, '..', 'dsco_order_model.json')
+            # with open(ruta_order, 'r') as file:   
+            #     dsco_orders_1 = json.load(file) #usar directamente dsco_orders_1
+            #traer las ordenes de las cajas ahora
              #print(dsco_orders_1)
             # with open(ruta_order, 'w', encoding='utf-8') as f:   
             #      json.dump(dsco_orders_1, f, ensure_ascii=False, indent=2)
@@ -54,10 +56,7 @@ class OrderSyncService:
              print(e)
 
 
-        # ruta_order = os.path.join(directorio_actual, '..', 'dsco_order_model.json')
-        # with open(ruta_order, 'r') as file:   
-        #      dsco_orders = json.load(file)["orders"] #usar directamente dsco_orders_1
-        #traer las ordenes de las cajas ahora
+        
         print("ordenes", len(dsco_orders_1))
 
         #skipped = []
@@ -84,21 +83,29 @@ class OrderSyncService:
             print("acaa")
             ordenes_creadas = []
             ordenes_no_creadas = []
+            info_ordenes = []
             for order in created:
-                mapped_order = map_dsco_order(order)
+                mapped_order, o_items = map_dsco_order(order)
                 print(mapped_order, "mapped")
                 #Hasta acá, debugear funcion
+                info_stock = client.liberar_items(o_items)
+                info_ordenes.append((mapped_order["OrderNumber"],(info_stock)))
                 crear_orden = client.create_order(mapped_order)
+               
                 print(crear_orden, "orden creada")
                 print(crear_orden[0])
                 if crear_orden[0]["Success"] == True:
                     ordenes_creadas.append(mapped_order["OrderNumber"])
+                    try: 
+                        self.dsco_client.formateo_ack(mapped_order)
+                    except Exception as e:
+                        print(e)
                 else:
                     ordenes_no_creadas.append(mapped_order["OrderNumber"])
             
-            print(ordenes_creadas, ordenes_no_creadas)
-            html_message = generar_html_reporte_creacion_ordenes(ordenes_creadas, ordenes_no_creadas)
-            enviar_reporte_email(html_message, ["ngurfinkel@the5411.com", "sguaita@the5411.com", ], "Órdenes TT Dsco")
+            print(ordenes_creadas, ordenes_no_creadas, info_ordenes)
+            html_message = generar_html_reporte_creacion_ordenes(ordenes_creadas, ordenes_no_creadas, info_ordenes)
+            enviar_reporte_email(html_message, ["ngurfinkel@the5411.com" ], "Órdenes Shirty Dsco") # "sguaita@the5411.com",
                     #self.dsco_client.formateo_ack(mapped_order)
 
             #Avisar por mail las ordenes creadas con exito y sino el error 
@@ -109,12 +116,12 @@ class OrderSyncService:
             #     #order_items = mapped_order.pop("OrderItems")
             #     self.mintsoft_client.update_order(mapped_order, order.get("mintsoft_id"))
             #     print("updated", order.get("mintsoft_id"))
-            ruta_state = os.path.join(directorio_actual, '..', 'state','state.json')
-            with open(ruta_state, 'r') as file:
-                states = json.load(file)
-            states["last_order_sync"] = until #ver funcionalidad de product
-            with open(ruta_state, 'w') as file:
-                json.dump(states, file)
+            # ruta_state = os.path.join(directorio_actual, '..', 'state','state.json')
+            # with open(ruta_state, 'r') as file:
+            #     states = json.load(file)
+            # states["last_order_sync"] = until #ver funcionalidad de product
+            # with open(ruta_state, 'w') as file:
+            #     json.dump(states, file)
         
         except Exception as e:
             print(e)

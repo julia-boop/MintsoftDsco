@@ -3,12 +3,38 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-def generar_html_reporte_creacion_ordenes(ordenes_creadas, ordenes_no_creadas):
+def generar_filas_info_orders(info_orders):
+    filas = ""
+    
+    if not info_orders:
+        return """
+        <tr>
+            <td colspan="3" style="padding: 12px; text-align: center; color: #777;">Sin información</td>
+        </tr>
+        """
+    
+    for order, productos in info_orders:
+        for producto, status in productos:
+            estado = "Removido " if status else "No removido "
+            color = "#4CAF50" if status else "#F44336"
+
+            filas += f"""
+            <tr style="background-color: #f9f9f9;">
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #ddd;"><b>{order}</b></td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #ddd;">{producto}</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #ddd; color: {color};"><b>{estado}</b></td>
+            </tr>
+            """
+    
+    return filas
+
+def generar_html_reporte_creacion_ordenes(ordenes_creadas, ordenes_no_creadas, info_orders):
     """
     Genera un HTML con dos tablas de una sola columna (OrderNumber), 
     una para órdenes exitosas y otra para fallidas.
     """
     try:
+        filas_info_orders = generar_filas_info_orders(info_orders)
         # Función auxiliar para generar las filas de cada tabla
         def generar_filas(lista_ordenes):
             filas = ""
@@ -38,7 +64,7 @@ def generar_html_reporte_creacion_ordenes(ordenes_creadas, ordenes_no_creadas):
         html_message = f"""
         <html>
         <body style="font-family: Arial, sans-serif; background-color: #f4f4f9; padding: 20px;">
-            <h1 style="color: #333; font-size: 24px; text-align: center;">Resumen de Integración: DSCO a Mintsoft</h1>
+            <h1 style="color: #333; font-size: 24px; text-align: center;">Resumen de Integración Shirty: DSCO a Mintsoft</h1>
 
             <h2 style="color: #4CAF50; text-align: center; font-size: 20px; margin-top: 30px;">✅ Órdenes Nuevas Creadas</h2>
             <table style="width: 80%; max-width: 400px; margin: 0 auto; border-collapse: collapse; background: #fff; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); border-radius: 10px; overflow: hidden;">
@@ -55,7 +81,18 @@ def generar_html_reporte_creacion_ordenes(ordenes_creadas, ordenes_no_creadas):
                 </tr>
                 {filas_no_creadas}
             </table>
+            <h2 style="color: #2196F3; text-align: center; font-size: 20px; margin-top: 40px;">
+                Resumen de Remoción de Productos
+            </h2>
 
+            <table style="width: 90%; max-width: 600px; margin: 0 auto; border-collapse: collapse; background: #fff; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); border-radius: 10px; overflow: hidden;">
+                <tr style="background-color: #2196F3; color: white;">
+                    <th style="padding: 10px;">OrderNumber</th>
+                    <th style="padding: 10px;">Producto</th>
+                    <th style="padding: 10px;">Estado</th>
+                </tr>
+                {filas_info_orders}
+            </table>
             <p style="text-align: center; font-size: 12px; color: #888; margin-top: 30px;">Reporte generado automáticamente</p>
         </body>
         </html>

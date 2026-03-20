@@ -61,9 +61,9 @@ def map_dsco_order(dsco_order):
         order_value = 0 
         client = MintsoftOrderClient() #segmentar lógica por clie¡nte
         for li in dsco_order.get("lineItems", []):
-            sku = client.search_barcode(li.get("sku"))
+            #sku = client.search_barcode(li.get("sku"))
             item = {
-                "SKU": sku,
+                "SKU": li.get("sku"),
                 #Chequear como traer product id o si basta con SKU
                 "Quantity": li.get("quantity"),
                 "Price": li.get("consumerPrice"),
@@ -110,16 +110,16 @@ def map_dsco_order(dsco_order):
             "Phone": dsco_order.get("billTo", {}).get("phone"),
             #Mobile
             #"CourierService": dsco_order.get("shipCarrier") + " " + dsco_order.get("shipMethod") + " - " + "Ecommerce", #Agregar ecommerce
-            "CourierServiceId": 2562,  #chequear cual es para holiday
+            "CourierServiceId": 2555,  #chequear cual es el de shirty
             "Channel": "TEST_DSCO", #Cambiar a DSCO
-            "ChannelId": 50,  #Cambiar a 50
+            "ChannelId": 54,  #Cambiar a 5
             "Warehouse": "Warehouse", #Chequear
             "WarehouseId": int(os.getenv("MINTSOFT_WAREHOUSE_ID", "0")),
             "Currency": dsco_order.get("currencyCode"),
             "CurrencyId": currency_id,
             "RequiredDespatchDate": dsco_to_mintsoft(dsco_order.get("shipByDate")), 
             "OrderValue": order_value, 
-            "ClientId": 7,  #Porque esta hardcodeado 
+            "ClientId": 9,  #Porque esta hardcodeado 9
             #   "Comments": "string",
             #   "DeliveryNotes": "string",
             #   "GiftMessages": "string",
@@ -153,6 +153,6 @@ def map_dsco_order(dsco_order):
     except Exception as e:
         print(e)
         traceback.print_exec()
-    return mintsoft_order
+    return mintsoft_order, order_items
 
 
