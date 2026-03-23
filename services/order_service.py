@@ -105,7 +105,7 @@ class OrderSyncService:
             
             print(ordenes_creadas, ordenes_no_creadas, info_ordenes)
             html_message = generar_html_reporte_creacion_ordenes(ordenes_creadas, ordenes_no_creadas, info_ordenes)
-            enviar_reporte_email(html_message, ["ngurfinkel@the5411.com" , "sguaita@the5411.com"], "Órdenes Shirty Dsco") # "sguaita@the5411.com",
+            enviar_reporte_email(html_message, ["ngurfinkel@the5411.com" , "sguaita@the5411.com", "jcordero@the5411.com"], "Órdenes Shirty Dsco") # "sguaita@the5411.com",
                     #self.dsco_client.formateo_ack(mapped_order)
 
             #Avisar por mail las ordenes creadas con exito y sino el error 

@@ -112,7 +112,7 @@ def map_dsco_order(dsco_order):
             #"CourierService": dsco_order.get("shipCarrier") + " " + dsco_order.get("shipMethod") + " - " + "Ecommerce", #Agregar ecommerce
             "CourierServiceId": 2555,  #chequear cual es el de shirty
             "Channel": "TEST_DSCO", #Cambiar a DSCO
-            "ChannelId": 54,  #Cambiar a 5
+            "ChannelId": 50,  #Cambiar a 5
             "Warehouse": "Warehouse", #Chequear
             "WarehouseId": int(os.getenv("MINTSOFT_WAREHOUSE_ID", "0")),
             "Currency": dsco_order.get("currencyCode"),

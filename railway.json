@@ -6,6 +6,6 @@
   "deploy": {
     "startCommand": "python -u mains/order_main.py",
     "restartPolicyType": "ON_FAILURE",
-    "cronSchedule": "30 14 * * 1-5"
+    "cronSchedule": "10 13,17,20 * * 1-5"
   }
 }
