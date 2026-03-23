@@ -286,7 +286,7 @@ class MintsoftOrderClient:
 
     def liberar_items(self, order_items):
         info_stock = []
-        id = 4078
+        id = 2395
         url_items = f"{self.BASE_URL}/api/Order/{id}/Items"
 
         items_dsco = requests.get(
