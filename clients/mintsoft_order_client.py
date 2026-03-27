@@ -3,6 +3,8 @@ import requests
 from typing import Optional, Dict, Any, List
 from dotenv import load_dotenv
 import json
+import time 
+
 
 load_dotenv()
 
@@ -141,6 +143,7 @@ class MintsoftOrderClient:
             json=payload,
             timeout=30,
         )
+
         r.raise_for_status()
 
         return r.json() if r.text else {}
@@ -288,7 +291,7 @@ class MintsoftOrderClient:
         info_stock = []
         id = 2395
         url_items = f"{self.BASE_URL}/api/Order/{id}/Items"
-
+        time.sleep(6)
         items_dsco = requests.get(
             url=url_items,
             headers=self.headers(),
@@ -328,6 +331,7 @@ class MintsoftOrderClient:
                         
                         url = f"{self.BASE_URL}/api/Order/{id}/Items/{ItemId}"
                         #print(json.dumps(item_updated))
+                        time.sleep(8)
                         r = requests.post(
                             url=url,
                             headers=self.headers(),
@@ -339,12 +343,14 @@ class MintsoftOrderClient:
                             timeout=30
                         )
                         print(r.json())
+                        
                         break
 
                     if item_dsco.get("Quantity") - cantidad_nueva == 0:
                         
                         print("itemid", ItemId)
                         url = f"{self.BASE_URL}/api/Order/{id}/Items/{ItemId}"
+                        time.sleep(8)
                         r = requests.delete(
                             url=url,
                             headers=self.headers(),
@@ -354,6 +360,7 @@ class MintsoftOrderClient:
                             },
                             timeout=30
                         )
+                        
                         print(r.json())
                         if r.json().get("Message") !=  'Cannot remove the last item. Please cancel the order instead.':
                             hay_item = True
