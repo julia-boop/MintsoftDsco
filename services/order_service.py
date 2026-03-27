@@ -102,7 +102,7 @@ class OrderSyncService:
             
             print(ordenes_creadas, ordenes_no_creadas)
             html_message = generar_html_reporte_creacion_ordenes(ordenes_creadas, ordenes_no_creadas)
-            enviar_reporte_email(html_message, ["ngurfinkel@the5411.com", "sguaita@the5411.com", ], "Órdenes TT Dsco")
+            enviar_reporte_email(html_message, ["ngurfinkel@the5411.com", "sguaita@the5411.com" ], "Órdenes TT Dsco")
                     #
 
             #Avisar por mail las ordenes creadas con exito y sino el error 
