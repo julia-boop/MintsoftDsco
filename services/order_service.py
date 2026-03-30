@@ -28,6 +28,101 @@ class OrderSyncService:
         self.last_order_sync = states.get("last_order_sync", None)
         self.last_product_sync = states.get("last_product_sync", None)
 
+
+    def carga_larga(
+        self,
+        scrollId
+    ):
+        #mintsoft_orders = MintsoftOrderClient()._get_orders()
+        #Para que trae ordenes?
+        directorio_actual = os.path.dirname(os.path.abspath(__file__))
+        print("chequeo")
+        now_utc = datetime.now(timezone.utc)
+        since_utc = now_utc - timedelta(days=3)
+        since = since_utc.isoformat().replace('+00:00', 'Z')
+        try: 
+            until = datetime.now(timezone.utc).isoformat() 
+            dsco_orders_1 = self.dsco_client.get_orders_largo(
+                 orders_created_since=since,
+                 until=until,
+                 scrollId= scrollId
+             )
+            # ruta_order = os.path.join(directorio_actual, '..', 'dsco_order_model.json')
+            # with open(ruta_order, 'r') as file:   
+            #     dsco_orders_1 = json.load(file) #usar directamente dsco_orders_1
+            #traer las ordenes de las cajas ahora
+             #print(dsco_orders_1)
+            # with open(ruta_order, 'w', encoding='utf-8') as f:   
+            #      json.dump(dsco_orders_1, f, ensure_ascii=False, indent=2)
+            print("inicio", dsco_orders_1,"fin")
+        except Exception as e:
+             print(e)
+
+
+        
+        print("ordenes", len(dsco_orders_1))
+
+        #skipped = []
+        updated = []
+        created = []
+        client = MintsoftOrderClient()
+        try: 
+            
+            for dsco_order in dsco_orders_1["orders"]:
+                #mintsoft_order = next((order for order in mintsoft_orders if order["OrderNumber"] == dsco_order["poNumber"]), None)
+                #chequear orden mintsoft con id 
+                
+                print(dsco_order["poNumber"])
+                mintsoft_order = client.order_con_order_number(dsco_order["poNumber"])
+                if not mintsoft_order:  #Cambiar logica, chequear directamente con order id, chequear si trae updated
+                    print("cae acá", mintsoft_order)
+                    created.append(dsco_order)
+                #elif datetime.fromisoformat(dsco_order["dscoLastUpdate"]) > datetime.fromisoformat(mintsoft_order["ConnectAction"]["ExtraDate1"]):
+                   # updated.append({"order":dsco_order, "mintsoft_id": mintsoft_order["Id"]})
+                else:
+                    updated.append({"order":dsco_order, "mintsoft_id": mintsoft_order[0]["ID"]})
+
+            # self.logger.info(f"Orders to be created: {len(created)}")
+            # self.logger.info(f"Orders to be updated: {len(updated)}")
+            # self.logger.info(f"Orders to be skipped: {len(skipped)}")
+            print("acaa")
+            ordenes_creadas = []
+            ordenes_no_creadas = []
+            info_ordenes = []
+            for order in created:
+                mapped_order, o_items = map_dsco_order(order)
+                print(mapped_order, "mapped")
+                #Hasta acá, debugear funcion
+                info_stock = client.liberar_items(o_items)
+                info_ordenes.append((mapped_order["OrderNumber"],(info_stock)))
+                crear_orden = client.create_order(mapped_order)
+               
+                print(crear_orden, "orden creada")
+                print(crear_orden[0])
+                if crear_orden[0]["Success"] == True:
+                    ordenes_creadas.append(mapped_order["OrderNumber"])
+                    try: 
+                        self.dsco_client.formateo_ack(mapped_order)
+                    except Exception as e:
+                        print(e)
+                else:
+                    ordenes_no_creadas.append(mapped_order["OrderNumber"])
+            
+            print(ordenes_creadas, ordenes_no_creadas, info_ordenes)
+            html_message = generar_html_reporte_creacion_ordenes(ordenes_creadas, ordenes_no_creadas, info_ordenes)
+            #enviar_reporte_email(html_message, ["ngurfinkel@the5411.com" , "sguaita@the5411.com"], "Órdenes Shirty Dsco") # "sguaita@the5411.com",
+            scrollId = dsco_orders_1.get("scrollId")
+            #Chequear cuando haya una carga larga 
+            if scrollId:
+                carga_larga = self.carga_larga(scrollId)
+
+            return 
+        
+        except Exception as e:
+            print(e)
+            traceback.print_exc()
+
+
     def sync_all_orders(
         self
     ):
@@ -64,9 +159,11 @@ class OrderSyncService:
         created = []
         client = MintsoftOrderClient()
         try: 
+            
             for dsco_order in dsco_orders_1["orders"]:
                 #mintsoft_order = next((order for order in mintsoft_orders if order["OrderNumber"] == dsco_order["poNumber"]), None)
                 #chequear orden mintsoft con id 
+                
                 print(dsco_order["poNumber"])
                 mintsoft_order = client.order_con_order_number(dsco_order["poNumber"])
                 if not mintsoft_order:  #Cambiar logica, chequear directamente con order id, chequear si trae updated
@@ -106,6 +203,9 @@ class OrderSyncService:
             print(ordenes_creadas, ordenes_no_creadas, info_ordenes)
             html_message = generar_html_reporte_creacion_ordenes(ordenes_creadas, ordenes_no_creadas, info_ordenes)
             enviar_reporte_email(html_message, ["ngurfinkel@the5411.com" , "sguaita@the5411.com"], "Órdenes Shirty Dsco") # "sguaita@the5411.com",
+            scrollId = dsco_orders_1.get("scrollId")
+            if scrollId:
+                carga_larga = self.carga_larga(scrollId)
                     #self.dsco_client.formateo_ack(mapped_order)
 
             #Avisar por mail las ordenes creadas con exito y sino el error 
