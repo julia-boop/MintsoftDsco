@@ -38,7 +38,7 @@ class OrderSyncService:
         directorio_actual = os.path.dirname(os.path.abspath(__file__))
         print("chequeo")
         now_utc = datetime.now(timezone.utc)
-        since_utc = now_utc - timedelta(days=3)
+        since_utc = now_utc - timedelta(days=2)
         since = since_utc.isoformat().replace('+00:00', 'Z')
         try: 
             until = datetime.now(timezone.utc).isoformat() 
@@ -131,7 +131,7 @@ class OrderSyncService:
         directorio_actual = os.path.dirname(os.path.abspath(__file__))
         print("chequeo")
         now_utc = datetime.now(timezone.utc)
-        since_utc = now_utc - timedelta(days=3)
+        since_utc = now_utc - timedelta(days=2)
         since = since_utc.isoformat().replace('+00:00', 'Z')
         try: 
             until = datetime.now(timezone.utc).isoformat() 
