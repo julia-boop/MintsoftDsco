@@ -75,7 +75,7 @@ def map_dsco_order(dsco_order):
         #Order a model:
         #Entender consumerOrderNumber ("return invoices tied to the consumer order number")
         
-
+        print("esto", dsco_order.get("shipping", {}).get("region"), dsco_order.get("shipping", {}).get("state") )
         mintsoft_order = {
             "OrderItems": order_items, #UnitPrice,UnitPriceVat,Discount,OrderItemNameValues, WarehouseId hardcodeado?, RequestedSerialNo,RequestedBatchNo, RequestedBBEDate
             #     "OrderItemNameValues": [ #parte de OrderItems
@@ -103,7 +103,7 @@ def map_dsco_order(dsco_order):
             "LastName": dsco_order.get("shipping", {}).get("lastName"),
             "Address1": address_lines[0],
             "Town": dsco_order.get("shipping", {}).get("city"),
-            "County": dsco_order.get("shipping", {}).get("state"),
+            "County": dsco_order.get("shipping", {}).get("region"),
             "PostCode": dsco_order.get("shipping", {}).get("postal"),
             "Country": country,
             "Email": dsco_order.get("billTo", {}).get("email"),
