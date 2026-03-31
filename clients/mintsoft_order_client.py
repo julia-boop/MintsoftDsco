@@ -75,6 +75,7 @@ class MintsoftOrderClient:
                                   "ConnectAction": payload["ConnectAction"],
                                 "Address1": payload["Address1"],
                                  "Town": payload["Town"],
+                                 "County": payload["County"],
                                   "Email": payload["Email"],
                                    "Phone": payload["Phone"],
                                      "ExternalOrderReference": payload["ExternalOrderReference"],
