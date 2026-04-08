@@ -66,10 +66,10 @@ def map_dsco_order(dsco_order):
                 "SKU": li.get("sku"),
                 #Chequear como traer product id o si basta con SKU
                 "Quantity": li.get("quantity"),
-                "Price": li.get("consumerPrice"),
-                "Details": li.get("title"),
+                "UnitPrice": li.get("expectedCost"),
+                #"Details": li.get("dscoItemId"),
             }
-            order_value += li.get("consumerPrice", 0) * li.get("quantity", 0)
+            order_value += li.get("expectedCost", 0) * li.get("quantity", 0)
             order_items.append(item)
         
         #Order a model:

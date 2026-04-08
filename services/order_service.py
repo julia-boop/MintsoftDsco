@@ -139,13 +139,14 @@ class OrderSyncService:
                  orders_created_since=since,
                  until=until,
              )
-            # ruta_order = os.path.join(directorio_actual, '..', 'dsco_order_model.json')
+            #ruta_order = os.path.join(directorio_actual, '..', 'dsco_order_model.json')
             # with open(ruta_order, 'r') as file:   
             #     dsco_orders_1 = json.load(file) #usar directamente dsco_orders_1
             #traer las ordenes de las cajas ahora
              #print(dsco_orders_1)
-            # with open(ruta_order, 'w', encoding='utf-8') as f:   
-            #      json.dump(dsco_orders_1, f, ensure_ascii=False, indent=2)
+            #with open(ruta_order, 'w', encoding='utf-8') as f:   
+                 #json.dump(dsco_orders_1, f, ensure_ascii=False, indent=2)
+            #sys.exit()
             print("inicio", dsco_orders_1,"fin")
         except Exception as e:
              print(e)
