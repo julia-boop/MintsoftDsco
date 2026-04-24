@@ -101,8 +101,9 @@ class OrderSyncService:
                     ordenes_no_creadas.append(mapped_order["OrderNumber"])
             
             print(ordenes_creadas, ordenes_no_creadas)
-            html_message = generar_html_reporte_creacion_ordenes(ordenes_creadas, ordenes_no_creadas)
-            enviar_reporte_email(html_message, ["ngurfinkel@the5411.com", "sguaita@the5411.com" ], "Órdenes TT Dsco")
+            if ordenes_creadas or ordenes_no_creadas:
+                html_message = generar_html_reporte_creacion_ordenes(ordenes_creadas, ordenes_no_creadas)
+                enviar_reporte_email(html_message, ["ngurfinkel@the5411.com", "sguaita@the5411.com" ], "Órdenes TT Dsco")
                     #
 
             #Avisar por mail las ordenes creadas con exito y sino el error 
