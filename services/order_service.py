@@ -110,7 +110,7 @@ class OrderSyncService:
             
             print(ordenes_creadas, ordenes_no_creadas)
             html_message = generar_html_reporte_creacion_ordenes(ordenes_creadas, ordenes_no_creadas)
-            #enviar_reporte_email(html_message, ["ngurfinkel@the5411.com" , "sguaita@the5411.com"], "Órdenes Shirty Dsco") # "sguaita@the5411.com",
+            enviar_reporte_email(html_message, ["ngurfinkel@the5411.com" , "gbrozzoni@the5411.com"], "Órdenes Seventy Dsco") # "sguaita@the5411.com",
             scrollId = dsco_orders_1.get("scrollId")
             #Chequear cuando haya una carga larga 
             if scrollId:
@@ -204,7 +204,7 @@ class OrderSyncService:
             print(ordenes_creadas, ordenes_no_creadas)
             if ordenes_creadas or ordenes_no_creadas:
                 html_message = generar_html_reporte_creacion_ordenes(ordenes_creadas, ordenes_no_creadas)
-                enviar_reporte_email(html_message, ["ngurfinkel@the5411.com" , "jvillanueva@the5411.com"], "Órdenes Shirty Dsco") # "sguaita@the5411.com",
+                enviar_reporte_email(html_message, ["ngurfinkel@the5411.com" , "gbrozzoni@the5411.com"], "Órdenes Seventy Dsco") # "sguaita@the5411.com",
             scrollId = dsco_orders_1.get("scrollId")
             if scrollId:
                 carga_larga = self.carga_larga(scrollId)
