@@ -88,11 +88,13 @@ class OrderSyncService:
             print("acaa")
             ordenes_creadas = []
             ordenes_no_creadas = []
+            info_ordenes = []
             #info_ordenes = []
             for order in created:
-                mapped_order = map_dsco_order(order)
+                mapped_order, o_items = map_dsco_order(order)
                 print(mapped_order, "mapped")
-                #Hasta acá, debugear funcion
+                info_stock = client.liberar_items(o_items)
+                info_ordenes.append((mapped_order["OrderNumber"],(info_stock)))
                 #info_stock = client.liberar_items(o_items)
                 #info_ordenes.append((mapped_order["OrderNumber"],(info_stock)))
                 crear_orden = client.create_order(mapped_order)
@@ -108,8 +110,8 @@ class OrderSyncService:
                 else:
                     ordenes_no_creadas.append(mapped_order["OrderNumber"])
             
-            print(ordenes_creadas, ordenes_no_creadas)
-            html_message = generar_html_reporte_creacion_ordenes(ordenes_creadas, ordenes_no_creadas)
+            print(ordenes_creadas, ordenes_no_creadas, info_ordenes)
+            html_message = generar_html_reporte_creacion_ordenes(ordenes_creadas, ordenes_no_creadas, info_ordenes)
             enviar_reporte_email(html_message, ["ngurfinkel@the5411.com" , "gbrozzoni@the5411.com"], "Órdenes Seventy Dsco") # "sguaita@the5411.com",
             scrollId = dsco_orders_1.get("scrollId")
             #Chequear cuando haya una carga larga 
@@ -183,10 +185,14 @@ class OrderSyncService:
             print("acaa")
             ordenes_creadas = []
             ordenes_no_creadas = []
+            info_ordenes = []
             #info_ordenes = []
             for order in created:
-                mapped_order = map_dsco_order(order)
+                mapped_order, o_items = map_dsco_order(order)
                 print(mapped_order, "mapped")
+                info_stock = client.liberar_items(o_items)
+                info_ordenes.append((mapped_order["OrderNumber"],(info_stock)))
+                crear_orden = client.create_order(mapped_order)
                 #Hasta acá, debugear funcion
                 #info_stock = client.liberar_items(o_items)
                 #info_ordenes.append((mapped_order["OrderNumber"],(info_stock)))
@@ -203,9 +209,9 @@ class OrderSyncService:
                 else:
                     ordenes_no_creadas.append(mapped_order["OrderNumber"])
             
-            print(ordenes_creadas, ordenes_no_creadas)
+            print(ordenes_creadas, ordenes_no_creadas, info_ordenes)
             if ordenes_creadas or ordenes_no_creadas:
-                html_message = generar_html_reporte_creacion_ordenes(ordenes_creadas, ordenes_no_creadas)
+                html_message = generar_html_reporte_creacion_ordenes(ordenes_creadas, ordenes_no_creadas, info_ordenes)
                 enviar_reporte_email(html_message, ["ngurfinkel@the5411.com" , "gbrozzoni@the5411.com"], "Órdenes Seventy Dsco") # "sguaita@the5411.com",
             scrollId = dsco_orders_1.get("scrollId")
             if scrollId:

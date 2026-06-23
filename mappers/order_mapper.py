@@ -110,7 +110,8 @@ def map_dsco_order(dsco_order):
             "Phone": dsco_order.get("billTo", {}).get("phone"),
             #Mobile
             #"CourierService": dsco_order.get("shipCarrier") + " " + dsco_order.get("shipMethod") + " - " + "Ecommerce", #Agregar ecommerce
-            "CourierServiceId": 2543,  #chequear cual es el de seventy #Cambiar a DSCO
+            "CourierServiceId": 2543,  #chequear cual es el de
+            "Channel": "TEST_DSCO", #Cambiar a DSCO
             "ChannelId": 50,  #Cambiar a 5
             "Warehouse": "Warehouse", #Chequear
             "WarehouseId": int(os.getenv("MINTSOFT_WAREHOUSE_ID", "0")),
@@ -118,7 +119,7 @@ def map_dsco_order(dsco_order):
             "CurrencyId": currency_id,
             "RequiredDespatchDate": dsco_to_mintsoft(dsco_order.get("shipByDate")), 
             "OrderValue": order_value, 
-            "ClientId": 112,  #Porque esta hardcodeado 
+            "ClientId": 112,  #Porque esta hardcodeado 9
             #   "Comments": "string",
             #   "DeliveryNotes": "string",
             #   "GiftMessages": "string",
@@ -152,6 +153,6 @@ def map_dsco_order(dsco_order):
     except Exception as e:
         print(e)
         traceback.print_exec()
-    return mintsoft_order
+    return mintsoft_order, order_items
 
 
