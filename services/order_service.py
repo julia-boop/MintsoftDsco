@@ -139,6 +139,8 @@ class OrderSyncService:
                  orders_created_since=since,
                  until=until,
              )
+            
+
             #ruta_order = os.path.join(directorio_actual, '..', 'dsco_order_model.json')
             # with open(ruta_order, 'r') as file:   
             #     dsco_orders_1 = json.load(file) #usar directamente dsco_orders_1
