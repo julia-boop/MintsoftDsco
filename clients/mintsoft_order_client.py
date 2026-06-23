@@ -3,6 +3,8 @@ import requests
 from typing import Optional, Dict, Any, List
 from dotenv import load_dotenv
 import json
+import time 
+
 
 load_dotenv()
 
@@ -44,19 +46,55 @@ class MintsoftOrderClient:
             "Accept": "application/json",
         }
 
-    def create_order(self, payload: Dict[str, Any]) -> Dict[str, Any]:
-        url = f"{self.BASE_URL}/api/Order"
+    def create_order(self, payload):
+        try:    
+            url = f"{self.BASE_URL}/api/Order"
+            headers = self.headers()
+            headers["Content-Type"] = "application/json"
+            print(payload, "Ok")
+            print(type(payload))
+            r = requests.put(
+                url,
+                headers=headers,
+                
+                data=json.dumps({"Order": payload,
+                                 "ClientId": payload["ClientId"],
+                                 "OrderNumber": payload["OrderNumber"],
+                                 "OrderItems": payload["OrderItems"],
+                                 "WarehouseId": payload["WarehouseId"],
+                                 "Warehouse": payload["Warehouse"],
+                                 "CurrencyId": payload["CurrencyId"],
+                                 "CourierServiceId": payload["CourierServiceId"],
+                                 "ChannelId": payload["ChannelId"],
+                                 "Currency": payload["Currency"],
+                                 "RequiredDespatchDate": payload["RequiredDespatchDate"],
+                                 "FirstName": payload["FirstName"],
+                                 "LastName": payload["LastName"],
+                                 "Country": payload["Country"],
+                                  "PostCode": payload["PostCode"],
+                                  "ConnectAction": payload["ConnectAction"],
+                                "Address1": payload["Address1"],
+                                 "Town": payload["Town"],
+                                 "County": payload["County"],
+                                  "Email": payload["Email"],
+                                   "Phone": payload["Phone"],
+                                     "ExternalOrderReference": payload["ExternalOrderReference"],
+                                      #"CourierService": payload["CourierService"],
+                                       "Channel": payload["Channel"],
+                                         "OrderValue": payload["OrderValue"],
+                                         "Address2": payload["Address2"],
+                                    
 
-        r = requests.put(
-            url,
-            headers=self.headers,
-            json=payload,
-            timeout=30,
-        )
-        r.raise_for_status()
 
-        return r.json() if r.text else {}
 
+                                 }),  # data= con dumps explícito, no json=
+                timeout=30,
+            )
+            print("STATUS:", r.status_code)
+            print("RESPONSE:", r.text)
+        except Exception as e:
+            print(e)
+        return r.json()
     def update_order_items(
         self,
         order_id: int,
@@ -92,23 +130,7 @@ class MintsoftOrderClient:
 
         return r.json() if r.text else {}
     
-    def delete_order_items(
-        self,
-        order_id: int,
-        item_id: int,
-        payload: Dict[str, Any]
-    ) -> Dict[str, Any]:
-
-        url = f"{self.BASE_URL}/api/Order/{order_id}/Items/{item_id}"
-        r = requests.delete(
-            url,
-            headers=self.headers,
-            json=payload,
-            timeout=30,
-        )
-        r.raise_for_status()
-
-        return r.json() if r.text else {}
+  
     
     def get_order_items(
         self,
@@ -127,24 +149,7 @@ class MintsoftOrderClient:
 
         return r.json() if r.text else {}
     
-    
-    def update_order(
-        self,
-        order_id: int,
-        payload: Dict[str, Any]
-    ) -> Dict[str, Any]:
-
-        url = f"{self.BASE_URL}/api/Order/{order_id}"
-
-        r = requests.post(
-            url,
-            headers=self.headers,
-            json=payload,
-            timeout=30,
-        )
-        r.raise_for_status()
-
-        return r.json() if r.text else {}
+   
 
     def _get_orders(
         self
@@ -194,3 +199,59 @@ class MintsoftOrderClient:
         with open('mintsoft_currency_model.json', 'w', encoding='utf-8') as f:
             json.dump(data, f, ensure_ascii=False, indent=4)
         return data
+    
+    def order_con_order_number(self, orderNumber):
+        url = f"{self.BASE_URL}/api/Order/Search"
+
+        r = requests.get(
+            url=url,
+            headers=self.headers(),
+            params= {
+                "OrderNumber": orderNumber,
+            },
+            timeout=30
+        )
+        print(r.json())
+        return r.json()
+    
+
+
+    def search_barcode(self, barcode):
+        url = f"{self.BASE_URL}/api/Product/SearchBarcode"
+
+        r = requests.get(
+            url=url,
+            headers=self.headers(),
+            params= {
+                "Barcode": barcode,
+            },
+            timeout=30
+        )
+        print(r.json())
+        print(r.json().get("SKU"))
+        return r.json().get("SKU")
+    
+    def map_order_item(self, order_vieja, cantidad_nueva):
+
+        return {
+            "SKU": order_vieja.get("SKU"),
+            "ProductId": order_vieja.get("ProductId"),
+            "Quantity": order_vieja.get("Quantity") - cantidad_nueva,
+            "Details": order_vieja.get("Details"),
+            "UnitPrice": order_vieja.get("Price", 0),
+            "UnitPriceVat": order_vieja.get("Vat", 0),
+            "Discount": order_vieja.get("Discount", 0),
+            "OrderItemNameValues": [
+                {
+                    "Name": item.get("Name"),
+                    "Value": item.get("Value")
+                }
+                for item in order_vieja.get("OrderItemNameValues", [])
+            ],
+            "WarehouseId": 3,      
+            "RequestedSerialNo": "",
+            "RequestedBatchNo": "",
+            "RequestedBBEDate": ""
+        }
+
+  
