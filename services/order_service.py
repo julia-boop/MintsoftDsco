@@ -90,7 +90,7 @@ class OrderSyncService:
             ordenes_no_creadas = []
             #info_ordenes = []
             for order in created:
-                mapped_order, o_items = map_dsco_order(order)
+                mapped_order = map_dsco_order(order)
                 print(mapped_order, "mapped")
                 #Hasta acá, debugear funcion
                 #info_stock = client.liberar_items(o_items)
@@ -183,7 +183,7 @@ class OrderSyncService:
             ordenes_no_creadas = []
             #info_ordenes = []
             for order in created:
-                mapped_order, o_items = map_dsco_order(order)
+                mapped_order = map_dsco_order(order)
                 print(mapped_order, "mapped")
                 #Hasta acá, debugear funcion
                 #info_stock = client.liberar_items(o_items)
