@@ -192,7 +192,6 @@ class OrderSyncService:
                 print(mapped_order, "mapped")
                 info_stock = client.liberar_items(o_items)
                 info_ordenes.append((mapped_order["OrderNumber"],(info_stock)))
-                crear_orden = client.create_order(mapped_order)
                 #Hasta acá, debugear funcion
                 #info_stock = client.liberar_items(o_items)
                 #info_ordenes.append((mapped_order["OrderNumber"],(info_stock)))

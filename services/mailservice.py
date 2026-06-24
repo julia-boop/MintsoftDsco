@@ -64,7 +64,7 @@ def generar_html_reporte_creacion_ordenes(ordenes_creadas, ordenes_no_creadas, i
         html_message = f"""
         <html>
         <body style="font-family: Arial, sans-serif; background-color: #f4f4f9; padding: 20px;">
-            <h1 style="color: #333; font-size: 24px; text-align: center;">Resumen de Integración Shirty: DSCO a Mintsoft</h1>
+            <h1 style="color: #333; font-size: 24px; text-align: center;">Resumen de Integración Seventy: DSCO a Mintsoft</h1>
 
             <h2 style="color: #4CAF50; text-align: center; font-size: 20px; margin-top: 30px;">✅ Órdenes Nuevas Creadas</h2>
             <table style="width: 80%; max-width: 400px; margin: 0 auto; border-collapse: collapse; background: #fff; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); border-radius: 10px; overflow: hidden;">
